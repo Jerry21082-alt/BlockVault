@@ -1,27 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body { 
+  font-family: 'Poppins', sans-serif;
+  /* background-color: #1f183e; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-webkit-scrollbar { 
+  display: none;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+img { 
+  width: 100%;
+  height: 100%;
 }
+
+.media-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: min-content;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.snaps { 
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
+}
+.snaps > * { 
+  scroll-snap-align: start;
+}
+
+/* .active-search { 
+  width: 300px;
+  transition: width ease-out .2s;
+}
+
+.in-active-search { 
+  width: 180px;
+  transition: width ease-in .2s;
+} */
