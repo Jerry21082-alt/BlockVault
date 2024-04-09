@@ -7,7 +7,6 @@ import { CgArrowsExchangeV } from "react-icons/cg";
 import Image from "next/image";
 
 import { contextFunc } from "./useStateContext/StateContext";
-import { light } from "@mui/material/styles/createPalette";
 
 export default function RecentActivity() {
   const [toggleSelect, setToggleSelect] = useState(false);
