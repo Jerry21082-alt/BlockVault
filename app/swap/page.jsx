@@ -10,7 +10,6 @@ import Swap from "@/components/Swap";
 import { contextFunc } from "@/components/useStateContext/StateContext";
 import SecondSwap from "@/components/SecondSwap";
 import Layout from "@/components/Layout";
-import { light } from "@mui/material/styles/createPalette";
 
 export default function Exchange() {
   const {
