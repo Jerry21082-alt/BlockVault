@@ -6,7 +6,6 @@ import Layout from "@/components/Layout";
 import { behance_logo, mastCard_logo, visa_logo } from "@/public/paymentLogos";
 import Image from "next/image";
 import { contextFunc } from "@/components/useStateContext/StateContext";
-import { light } from "@mui/material/styles/createPalette";
 
 export default function BuyCrypto() {
   const [isButtonActive, setIsButtonActive] = useState("buy");
