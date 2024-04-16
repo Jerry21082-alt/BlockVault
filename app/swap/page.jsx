@@ -6,12 +6,10 @@ import { wallet } from "@/constants";
 import Image from "next/image";
 import { BsChevronDown } from "react-icons/bs";
 import { RiExchangeFill, RiExchangeLine } from "react-icons/ri";
-import Swap from "@/components/Swap";
 import { contextFunc } from "@/components/useStateContext/StateContext";
-import SecondSwap from "@/components/SecondSwap";
 import Layout from "@/components/Layout";
 
-export default function Exchange() {
+export default function Swap() {
   const {
     setSwap,
     priceInput,

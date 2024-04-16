@@ -12,7 +12,7 @@ export default function Exchange() {
   return (
     <>
       <Layout>
-        {/* <div
+        <div
           className={`exchange w-full flex flex-col md:flex-row gap-4 ${
             lightMode ? "bg-darkSnow" : "bg-secondaryDark"
           }`}
@@ -142,7 +142,7 @@ export default function Exchange() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </Layout>
     </>
   );
