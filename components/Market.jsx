@@ -55,11 +55,18 @@ export default function Market() {
                   </div>
 
                   <span
-                    className={`hidden md:block${
+                    className={`hidden md:table-cell ${
                       lightMode ? "text-grayColor" : "text-darkSnow"
                     }`}
                   >
                     {data.name}
+                  </span>
+                  <span
+                    className={`table-cell md:hidden ${
+                      lightMode ? "text-grayColor" : "text-darkSnow"
+                    }`}
+                  >
+                    {data.short}
                   </span>
                 </div>
               </td>

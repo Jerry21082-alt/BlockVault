@@ -30,7 +30,7 @@ export default function SideBar() {
       }`}
     >
       <div
-        className={`flex items-start flex-col px-4 gap-10 mt-20 ${
+        className={`flex items-start flex-col px-4 space-y-10 mt-20 ${
           lightMode ? "text-grayColor" : null
         }`}
       >

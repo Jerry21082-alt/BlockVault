@@ -11,96 +11,103 @@ import { contextFunc } from "@/components/useStateContext/StateContext";
 export default function Page() {
   const { lightMode } = contextFunc();
 
-  const CardChart = ({
-    icon,
-    name,
-    currentPrice,
-    point,
-    arrow,
-    chart,
-    gain,
-    style,
-  }) => (
-    <div
-      className={`cards p-4 w-52 md:w-full ${
-        lightMode ? "bg-snow shadow-md" : "bg-secondarySemiDark"
-      } rounded-lg`}
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <div className="flex items-center justify-center w-[30px]">
-            <Image src={icon} alt="currency photo" />
-          </div>
-          <span
-            className={`ml-2 text-${
-              lightMode ? "secondaryLight" : "darkSnow"
-            } text-sm`}
-          >
-            {name.toUpperCase()}
-          </span>
-        </div>
-
-        <div
-          className={`flex justify-center items-center rounded-md bg-grayColor text-${
-            lightMode ? "snow" : "secondaryDark"
-          } p-2 w-[40px] h-[20px] text-xs`}
-        >
-          24H
-        </div>
-      </div>
-      <h3 className={`text-${lightMode ? "dark" : "snow"} mt-10`}>
-        ${currentPrice}
-      </h3>
-      <div className="flex items-center gap-2">
-        <h3 className={`${style} mt-2 font-bold text-sm`}>
-          {!gain ? "-" : "+"} {point}%
-        </h3>
-        <div>{arrow}</div>
-      </div>
-      <div className="w-full h-12 mt-10">
-        <Image src={chart} alt="position chart" width={500} height={500} />
-      </div>
-    </div>
-  );
-
   return (
     <Layout>
       <div className={`home ${lightMode ? "bg-darkSnow" : "bg-secondaryDark"}`}>
-        <div className="w-full flex gap-4 overflow-x-auto">
+        <div className="flex-container w-full h-full items-center overflow-x-scroll mt-2">
           {exchangeCard.map((card, index) => (
-            <div key={index} className="aspect-square w-96">
-              <CardChart
-                icon={card.icon}
-                name={card.name}
-                currentPrice={card.currentPrice}
-                gain={card.position.gain}
-                chart={
-                  card.position.gain
-                    ? "/crypto_coin_svg/cuurvesss 1.png"
-                    : "/crypto_coin_svg/cuurvesss 2.png"
-                }
-                style={
-                  card.position.gain
-                    ? lightMode
-                      ? "text-greenColor"
-                      : "text-brightGreen"
-                    : "text-dangerColor"
-                }
-                point={card.position.point}
-                arrow={
-                  card.position.gain ? (
-                    <BsGraphUpArrow
-                      color={card.position.gain ? "#008000" : null}
-                      size={20}
-                    />
+            <div
+              key={index}
+              className={`aspect-square w-56 h-64 md:w-full md:h-auto rounded-lg flex-item p-4 ${
+                lightMode ? "bg-snow" : "bg-secondarySemiDark"
+              }`}
+            >
+              <div className="w-full flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8">
+                    <div dangerouslySetInnerHTML={{ __html: card.icon }} />
+                  </div>
+                  <span
+                    className={
+                      lightMode ? "text-secondaryDark" : "text-darkSnow"
+                    }
+                  >
+                    {card.name.toUpperCase()}
+                  </span>
+                </div>
+
+                <div className="bg-grayColor flex items-center justify-center w-10 h-5 rounded">
+                  <span
+                    className={
+                      lightMode ? "text-darkSnow" : "text-secondaryDark"
+                    }
+                  >
+                    24
+                  </span>
+                </div>
+              </div>
+
+              <h1
+                className={`mt-5 ${
+                  lightMode ? "text-secondaryDark" : "text-darkSnow"
+                }`}
+              >
+                {`$${card.currentPrice}`}
+              </h1>
+
+              <div className="flex items-center space-x-2">
+                <h4
+                  className={`mt-2 ${
+                    card.position.gain
+                      ? lightMode
+                        ? "text-greenColor"
+                        : "text-brightGreen"
+                      : "text-dangerColor"
+                  }`}
+                >{`${card.position.gain ? "+" : "-"}${
+                  card.position.point
+                }%`}</h4>
+
+                <div className="w-4 h-4">
+                  {card.position.gain ? (
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill={lightMode ? "#3CB371" : "#00FF00"}
+                    >
+                      <title>arrow_circle_up</title>
+                      <path d="M12 20.016q-1.641 0-3.094-0.633t-2.555-1.734-1.734-2.555-0.633-3.094 0.633-3.094 1.734-2.555 2.555-1.734 3.094-0.633 3.094 0.633 2.555 1.734 1.734 2.555 0.633 3.094-0.633 3.094-1.734 2.555-2.555 1.734-3.094 0.633zM12 21.984q2.063 0 3.867-0.773t3.188-2.156 2.156-3.188 0.773-3.867-0.773-3.867-2.156-3.188-3.188-2.156-3.867-0.773-3.867 0.773-3.188 2.156-2.156 3.188-0.773 3.867 0.773 3.867 2.156 3.188 3.188 2.156 3.867 0.773v0zM11.016 12v3.984h1.969v-3.984h3l-3.984-3.984-3.984 3.984h3z"></path>
+                    </svg>
                   ) : (
-                    <BsGraphDownArrow
-                      color={!card.position.gain ? "#ff0000" : null}
-                      size={20}
-                    />
-                  )
-                }
-              />
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="#FF0000"
+                    >
+                      <title>arrow_circle_down</title>
+                      <path d="M12 3.984q1.641 0 3.094 0.633t2.555 1.734 1.734 2.555 0.633 3.094-0.633 3.094-1.734 2.555-2.555 1.734-3.094 0.633-3.094-0.633-2.555-1.734-1.734-2.555-0.633-3.094 0.633-3.094 1.734-2.555 2.555-1.734 3.094-0.633zM12 2.016q-2.063 0-3.867 0.773t-3.188 2.156-2.156 3.188-0.773 3.867 0.773 3.867 2.156 3.188 3.188 2.156 3.867 0.773 3.867-0.773 3.188-2.156 2.156-3.188 0.773-3.867-0.773-3.867-2.156-3.188-3.188-2.156-3.867-0.773v0zM12.984 12v-3.984h-1.969v3.984h-3l3.984 3.984 3.984-3.984h-3z"></path>
+                    </svg>
+                  )}
+                </div>
+              </div>
+              <div className="w-full h-16 mt-8">
+                <Image
+                  src={
+                    card.position.gain
+                      ? "/crypto_coin_svg/cuurvesss 2.png"
+                      : "/crypto_coin_svg/cuurvesss 1.png"
+                  }
+                  width={500}
+                  height={500}
+                  alt="chart position"
+                />
+              </div>
             </div>
           ))}
         </div>

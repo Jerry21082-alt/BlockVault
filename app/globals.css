@@ -218,6 +218,20 @@ thead tr {
   transition: transform 0.2s ease-in-out;
 }
 
+.flex-container {
+  display: flex;
+  padding-right: 10px;
+}
+
+.flex-item {
+  margin-right: 16px;
+}
+
+.flex-item:last-child {
+  margin-right: 0;
+}
+
+
 /* .transaction-history table {
   display: none;
 } */
