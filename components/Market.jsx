@@ -37,8 +37,8 @@ export default function Market() {
             <th className="">1h %</th>
             <th>24h %</th>
             <th className="">7d %</th>
-            <th className="hidden md:block">Market Cap</th>
-            <th className="hidden md:block">Volume (24h)</th>
+            <th className="hidden md:table-cell">Market Cap</th>
+            <th className="hidden md:table-cell">Volume (24h)</th>
           </tr>
         </thead>
         <tbody>
