@@ -66,7 +66,7 @@ export default function Page() {
   return (
     <Layout>
       <div className={`home ${lightMode ? "bg-darkSnow" : "bg-secondaryDark"}`}>
-        <div className="w-full flex gap-4 overflow-y-hidden overflow-x-auto md:overflow-x-hidden mt-2">
+        <div className="w-full flex gap-4 overflow-x-auto md:overflow-x-hidden mt-2">
           {exchangeCard.map((card, index) => (
             <div key={index} className="aspect-square w-96">
               <CardChart
