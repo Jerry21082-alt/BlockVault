@@ -31,7 +31,7 @@ export default function Exchange() {
       <div
         className={`bg-${
           lightMode ? "darkSnow" : "secondaryDark"
-        } w-full flex justify-center mt-[3rem]`}
+        } w-full flex justify-center mt-14 swap`}
       >
         <div
           className={`rounded-md bg-${
@@ -40,18 +40,27 @@ export default function Exchange() {
         >
           <div className={`p-4 text-${lightMode ? "dark" : "snow"}`}>Swap</div>
 
-          <div className={`border-t border-${lightMode ? 'darkSnow' : 'grayColor'}  flex flex-col justify-center items-center py-5 relative`}>
+          <div
+            className={`border-t border-${
+              lightMode ? "darkSnow" : "grayColor"
+            }  flex flex-col justify-center items-center py-5 relative`}
+          >
             <div className="absolute bg-grayColor rounded-full w-[40px] h-[40px] flex justify-center items-center">
               <RiExchangeFill size={30} color="1f183e" />
             </div>
 
-            <div className={`rounded-md border border-${lightMode ? 'darkSnow' : 'primaryColor'} w-[90%] p-2 flex justify-between items-center`}>
+            <div
+              className={`rounded-md border border-${
+                lightMode ? "darkSnow" : "primaryColor"
+              } w-[90%] p-2 flex justify-between items-center`}
+            >
               <div>
                 <div className="flex items-center gap-1">
                   <div className="flex items-center justify-center w-[30px]">
-                    <Image
-                      src={currentCurrency.currency}
-                      alt="currency photo"
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: currentCurrency.currency,
+                      }}
                     />
                   </div>
                   <button
@@ -82,13 +91,18 @@ export default function Exchange() {
               </div>
             </div>
 
-            <div className={`rounded-md border border-${lightMode ? 'darkSnow' : 'primaryColor'} w-[90%] p-2 flex justify-between items-center mt-5`}>
+            <div
+              className={`rounded-md border border-${
+                lightMode ? "darkSnow" : "primaryColor"
+              } w-[90%] p-2 flex justify-between items-center mt-5`}
+            >
               <div>
                 <div className="flex items-center gap-1">
                   <div className="flex items-center justify-center w-[30px]">
-                    <Image
-                      src={secondCurrentCurr.currency}
-                      alt="currency photo"
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: currentCurrency.currency,
+                      }}
                     />
                   </div>
                   <button
@@ -155,8 +169,8 @@ export default function Exchange() {
             </button>
           </div>
         </div>
-        <Swap />
-        <SecondSwap />
+        {/* <Swap /> */}
+        {/* <SecondSwap /> */}
       </div>
     </Layout>
   );

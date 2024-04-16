@@ -1,70 +1,122 @@
-import { market } from "@/constants";
+import { cryptoArray } from "@/constants";
 import Image from "next/image";
 import { contextFunc } from "./useStateContext/StateContext";
+import { formatPrice } from "@/helpers/formatPrice";
 
 export default function Market() {
-  const max_length = market.length - 1;
-  const lastItem = market[max_length];
+  const max_length = cryptoArray.length - 1;
+  const lastItem = cryptoArray[max_length];
 
   const { lightMode } = contextFunc();
 
-  const MarketInfo = ({ icon, name, price, hour, day, week, cap, vol, borderStyle, dep }) => (
-    <div className={`flex justify-between items-center  py-3 ${borderStyle}`}>
-      <div className="flex items-center gap-2">
-        <div className="flex justify-center items-center w-[25px]">
-          <Image src={icon} alt="currency photo" />
-        </div>
-        <span className={`text-${lightMode ? 'dark' : 'snow'}`}>{name}</span>
-      </div>
-
-      <span className={`text-${dep ? 'dangerColor' : 'greenColor'} text-sm`}>${price}k</span>
-
-      <span className="hidden md:block text-greenColor text-sm">{hour}%</span>
-
-      <span className="hidden md:block text-greenColor text-sm">{day}%</span>
-
-    <span className="hidden md:block text-greenColor text-sm">{week}%</span>
-
-      <span className={`text-${lightMode ? 'dark' : 'snow'} text-sm`}>${cap}k</span>
-
-      <span className={`text-${lightMode ? 'dark' : 'snow'} text-sm`}>${vol}k</span>
-    </div>
-  );
-
   return (
-    <div className={`mt-5 bg-${lightMode ? 'snow' : 'secondarySemiDark'} rounded-lg`}>
-      <div className={`border-b ${lightMode ? 'border-darkSnow' : 'border-secondaryLight'}`}>
-        <h2 className={`text-${lightMode ? 'dark' : 'snow'} font-bold p-4 text-xl`}>Market</h2>
+    <div
+      className={`market mt-5 bg-${
+        lightMode ? "snow" : "secondarySemiDark"
+      } rounded-lg`}
+    >
+      <div
+        className={`border-b ${
+          lightMode ? "border-darkSnow" : "border-secondaryLight"
+        }`}
+      >
+        <h2
+          className={`text-${
+            lightMode ? "dark" : "snow"
+          } font-bold p-4 text-xl`}
+        >
+          Market
+        </h2>
       </div>
-      <div className="flex justify-between p-4 items-center mt-5">
-        <span className="text-grayColor font-bold">Market</span>
-        <span className="text-grayColor font-bold">Price</span>
 
-        <span className="hidden md:block text-grayColor font-bold">1h%</span>
-        <span className="hidden md:block text-grayColor font-bold">24h%</span>
-        <span className="hidden md:block text-grayColor font-bold">7d%</span>
+      <table className="w-full mt-4">
+        <thead>
+          <tr>
+            <th>Market</th>
+            <th>Price</th>
+            <th className="md:block">1h %</th>
+            <th>24h %</th>
+            <th className="md:block">7d %</th>
+            <th className="hidden md:block">Market Cap</th>
+            <th className="hidden md:block">Volume (24h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cryptoArray.map((data, i) => (
+            <tr
+              key={i}
+              className={lightMode ? "table-light" : "table-dark"}
+              style={{ border: lastItem === data ? "none" : null }}
+            >
+              <td className="p-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 md:w-8 h-6 md:h-8 flex items-center justify-center my-1">
+                    <div dangerouslySetInnerHTML={{ __html: data.icon }} />
+                  </div>
 
-        <span className="text-grayColor font-bold">Cap</span>
-        <span className="text-grayColor font-bold">Vol</span>
-      </div>
-
-      <div className="mt-2 w-full p-3">
-        {market.map((market, idx) => (
-          <MarketInfo
-            key={idx}
-            icon={market.icon}
-            name={market.name.short}
-            price={market.price}
-            hour={market.time.hr}
-            day={market.time.day}
-            week={market.time.week}
-            cap={market.cap}
-            vol={market.vol}
-            borderStyle={lastItem === market ? "" : `border-b border-${lightMode ? 'darkSnow' : 'secondaryLight'}`}
-            dep={market.depreciation}
-          />
-        ))}
-      </div>
+                  <span
+                    className={`hidden md:block${
+                      lightMode ? "text-grayColor" : "text-darkSnow"
+                    }`}
+                  >
+                    {data.name}
+                  </span>
+                </div>
+              </td>
+              <td>
+                <span
+                  className={
+                    data.price < 50
+                      ? `text-dangerColor`
+                      : lightMode
+                      ? "text-greenColor"
+                      : "text-brightGreen"
+                  }
+                >
+                  ${data.price}
+                </span>
+              </td>
+              <td>
+                <span className={`text-dangerColor`}>0.78%</span>
+              </td>
+              <td>
+                <span
+                  className={`${
+                    data.percentChange24h < 1
+                      ? `text-dangerColor`
+                      : lightMode
+                      ? "text-greenColor"
+                      : "text-brightGreen"
+                  }`}
+                >
+                  {data.percentChange24h}%
+                </span>
+              </td>
+              <td className="md:block">
+                <span className={`text-dangerColor`}>14.6%</span>
+              </td>
+              <td>
+                <span
+                  className={`hidden md:block ${
+                    lightMode ? "text-grayColor" : "text-darkSnow"
+                  }`}
+                >
+                  ${formatPrice(data.marketCap, 0)}
+                </span>
+              </td>
+              <td>
+                <span
+                  className={`hidden md:block ${
+                    lightMode ? "text-grayColor" : "text-darkSnow"
+                  }`}
+                >
+                  ${formatPrice(data.volume24h, 0)}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

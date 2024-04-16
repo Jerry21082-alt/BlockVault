@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Nav, SideBar } from "@/components/pageFiles";
+import "../styles/typography.css";
 import StateContext from "@/components/useStateContext/StateContext";
 
 // export const metaData = {
@@ -9,7 +9,7 @@ import StateContext from "@/components/useStateContext/StateContext";
 
 export default function layout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <StateContext>
         <body>{children}</body>
       </StateContext>

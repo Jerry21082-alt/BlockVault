@@ -2,10 +2,6 @@
 
 import Layout from "@/components/Layout";
 import { contextFunc } from "@/components/useStateContext/StateContext";
-import { BiSolidHand, BiSolidHome, BiSolidMinusCircle } from "react-icons/bi";
-import { BsPlusCircleFill } from "react-icons/bs";
-import { HiMenuAlt1 } from "react-icons/hi";
-import { RiMenuSearchFill } from "react-icons/ri";
 
 import ExchangeChart from "@/components/ExchangeChart";
 import Assets from "@/components/Assets";
@@ -17,7 +13,7 @@ export default function Exchange() {
     <>
       <Layout>
         <div
-          className={`w-full p-4 flex flex-col md:flex-row gap-4 ${
+          className={`exchange w-full flex flex-col md:flex-row gap-4 ${
             lightMode ? "bg-darkSnow" : "bg-secondaryDark"
           }`}
         >

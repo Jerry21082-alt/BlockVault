@@ -1,3 +1,7 @@
+import { generateStockCandles } from "@/helpers/generateStockCandles";
+
+const axisData = generateStockCandles(60)
+
 export const data = {
     series: [
       {
@@ -248,7 +252,7 @@ export const data = {
     options: {
       chart: {
         type: "candlestick",
-        height: 350,
+        height: 450,
       },
       plotOptions: {
         candlestick: {
@@ -263,11 +267,17 @@ export const data = {
       },
       xaxis: {
         type: "datetime",
+        labels: {
+          show: false
+        }
       },
       yaxis: {
         tooltip: {
-          enabled: true,
+          enabled: false,
         },
+        labels: {
+          show: false
+        }
       },
     },
   };

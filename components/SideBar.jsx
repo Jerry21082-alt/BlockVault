@@ -13,17 +13,15 @@ import { contextFunc } from "./useStateContext/StateContext";
 export default function SideBar() {
   const pathname = usePathname();
 
-  const { toggleBar, setToggleBar, lightMode, toggleLightMode } = contextFunc();
+  const { toggleBar, setToggleBar, lightMode, setLightMode } = contextFunc();
 
   const inactiveLink = "flex items-center justify-start gap-2";
 
-  const activeLink = `bg-secondaryLight font-semibold ${
-    lightMode ? "bg-gradient-to-r from-violetColor  to-grayColor " : ""
-  } py-2 px-4 w-full rounded-3xl ${inactiveLink}`;
+  const activeLink = `bg-gradient-to-r from-violetColor to-grayColor text-dark py-2 px-4 w-full rounded-3xl ${inactiveLink}`;
 
   return (
     <div
-      className={`w-[60%] md:w-[20vw] h-screen bg-${
+      className={`side-bar w-[60%] md:w-[20vw] h-screen bg-${
         lightMode ? "snow" : "secondarySemiDark"
       } z-10 overflow-y-auto fixed top-0 left-0${
         !toggleBar
@@ -31,16 +29,18 @@ export default function SideBar() {
           : "translate-x-0 transition-all"
       }`}
     >
-      <div className="flex items-start flex-col px-4 gap-10 mt-[5rem]">
+      <div
+        className={`flex items-start flex-col px-4 gap-10 mt-20 ${
+          lightMode ? "text-grayColor" : null
+        }`}
+      >
         <Link
           onClick={() => setToggleBar(false)}
-          href={`/home`}
-          className={pathname == "/home" ? activeLink : inactiveLink}
+          href="/"
+          className={pathname == "/" ? activeLink : inactiveLink}
         >
-          <AiFillHome color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <AiFillHome color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Market
           </h4>
         </Link>
@@ -50,10 +50,8 @@ export default function SideBar() {
           href={`/buyCrypto`}
           className={pathname == "/buyCrypto" ? activeLink : inactiveLink}
         >
-          <BiSolidCart color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <BiSolidCart color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Buy Crypto
           </h4>
         </Link>
@@ -63,10 +61,11 @@ export default function SideBar() {
           href={`/swap`}
           className={pathname == "/swap" ? activeLink : inactiveLink}
         >
-          <BsCurrencyExchange color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <BsCurrencyExchange
+            color={lightMode ? "#463a6c" : "#8b86a1"}
+            size={20}
+          />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Swap
           </h4>
         </Link>
@@ -76,10 +75,8 @@ export default function SideBar() {
           href={`/exchange`}
           className={pathname == "/exchange" ? activeLink : inactiveLink}
         >
-          <RiExchangeFill color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <RiExchangeFill color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Exchange
           </h4>
         </Link>
@@ -89,10 +86,8 @@ export default function SideBar() {
           href={`/earn`}
           className={pathname == "/earn" ? activeLink : inactiveLink}
         >
-          <GiReceiveMoney color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <GiReceiveMoney color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Earn
           </h4>
         </Link>
@@ -102,10 +97,8 @@ export default function SideBar() {
           href={`/setting`}
           className={pathname == "/setting" ? activeLink : inactiveLink}
         >
-          <AiFillSetting color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <AiFillSetting color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Settings
           </h4>
         </Link>
@@ -115,26 +108,30 @@ export default function SideBar() {
           href={`/help`}
           className={pathname == "/help" ? activeLink : inactiveLink}
         >
-          <BiSolidHelpCircle color={lightMode ? '#463a6c' : '#8b86a1'} size={20} />
-          <h4
-            className={`text-${activeLink && lightMode ? "dark" : "grayColor"}`}
-          >
+          <BiSolidHelpCircle
+            color={lightMode ? "#463a6c" : "#8b86a1"}
+            size={20}
+          />
+          <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
             Help
           </h4>
         </Link>
       </div>
       <div className="flex justify-center items-center gap-2 mt-10 pb-2">
         <BsSunFill color={lightMode ? "#7250ee" : "#8b86a1"} />
-        <div className={`flex items-center justify-end bg-${lightMode ? 'darkSnow' : 'secondaryLight'} rounded-3xl w-[40px] h-[25px] p-1`}>
+        <button
+          type="button"
+          className={`flex items-center justify-end bg-${
+            lightMode ? "darkSnow" : "secondaryLight"
+          } rounded-3xl w-[40px] h-[25px] p-1`}
+        >
           <div
-            onClick={toggleLightMode}
+            onClick={() => setLightMode((prev) => !prev)}
             className={`rounded-full w-[20px] h-[20px] transform bg-primaryColor cursor-pointer ${
-              lightMode
-                ? "translate-x-[-60%] transition-all"
-                : "translate-x-0 transition-all"
+              lightMode ? "set-light-mode" : "set-dark-mode"
             }`}
           />
-        </div>
+        </button>
         <BsMoonStarsFill color={lightMode ? "#8b86a1" : "#7250ee"} />
       </div>
     </div>

@@ -10,30 +10,30 @@ export default function Dashboard() {
   const [quotes, setQuotes] = useState({});
 
   const { stockSymbol, lightMode, setIsLoading } = contextFunc();
-  
+
   useEffect(() => {
     const updateStockDetails = async () => {
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         const result = await fetchStockDetails(stockSymbol);
         setStockDetails(result);
       } catch (err) {
         setStockDetails([]);
         console.log(err);
-      } finally{ 
-        setIsLoading(false)
+      } finally {
+        setIsLoading(false);
       }
     };
 
     const updateStockOverview = async () => {
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         const result = await fetchStockQuotes(stockSymbol);
         setQuotes(result);
       } catch (err) {
         setQuotes([]);
-      } finally { 
-        setIsLoading(false)
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -42,19 +42,30 @@ export default function Dashboard() {
   }, [stockSymbol]);
 
   return (
-    <div className="w-full xl:h-[70vh] flex flex-col md:flex-row gap-4">
-      
+    <div className="w-full h-full flex flex-col gap-4 md:flex-row mt-4">
       <DisplayChart stockDetails={stockDetails} />
 
-      <div className={`bg-${lightMode ? 'snow' : 'secondarySemiDark'} rounded-lg p-4 w-full md:w-[30%] md:block`}>
-        <div className={`w-full border-b border-solid border-${lightMode ? 'darkSnow' : 'secondaryLight'}`}>
+      <div
+        className={`dashboard bg-${
+          lightMode ? "snow" : "secondarySemiDark"
+        } rounded-lg p-4 w-full h-full md:w-[30%] md:block`}
+      >
+        <div
+          className={`w-full border-b border-solid border-${
+            lightMode ? "darkSnow" : "secondaryLight"
+          }`}
+        >
           <span className="text-grayColor font-bold text-lg">
             {stockDetails.name}
           </span>
           <div className="flex justify-between items-center mt-5 my-2">
             <div>
-              <span className={`text-${lightMode ? 'dark' : 'snow'}`}>${quotes.pc}</span>{" "}
-              <span className="text-grayColor text-sm">{stockDetails.currency}</span>
+              <span className={`text-${lightMode ? "dark" : "snow"}`}>
+                ${quotes.pc}
+              </span>{" "}
+              <span className="text-grayColor text-sm">
+                {stockDetails.currency}
+              </span>
             </div>
             <span
               className={`text-${
@@ -88,7 +99,7 @@ export default function Dashboard() {
           </div>
           <div className="flex justify-between items-center py-3">
             <span
-              className={`text-grayColor text-xs ${
+              className={`text-grayColor ${
                 stockDetails.exchange?.length > 20 ? "hidden" : null
               }`}
             >

@@ -14,13 +14,14 @@ module.exports = {
       darkPurple: "#e55bea",
       grayColor: "#8b86a1",
       skyBlueColor: "#73ace1",
-      greenColor: "#16db65",
-      dangerColor: "#ef233c",
+      greenColor: "#3CB371",
+      brightGreen: "#00FF00",
+      dangerColor: "#FF0000",
       violetColor: "#73d7e1",
-      snow: "#fff",
+      snow: "#F5F5F5",
       dark: "#000",
-      darkSnow: "#eff6e0",
-      loading: "rgba(0,0,0,0.5)"
+      darkSnow: "#e9eedf",
+      loading: "rgba(0,0,0,0.5)",
     },
     extend: {
       gridRows: {

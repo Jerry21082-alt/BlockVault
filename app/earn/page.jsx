@@ -37,7 +37,7 @@ export default function EarnPage() {
     <div
       className={`p-4 ${
         lightMode ? "bg-gradient-to-tr from-dark via-skyBlue to-grayColor" : "bg-snow"
-      } rounded-lg w-full p-4`}
+      } rounded-lg w-full`}
     >
       <div className="flex items-center gap-3">
         <div className="flex justify-center items-center w-[40px]">
@@ -68,14 +68,14 @@ export default function EarnPage() {
     <Layout>
       <div
         onClick={() => setToggleBar(false)}
-        className={`w-full md:w-[80vw] bg-${lightMode ? 'darkSnow' : 'secondaryDark'}`}
+        className={`w-full bg-${lightMode ? 'darkSnow' : 'secondaryDark'}`}
       >
-        <div className="flex justify-between items-center px-5">
+        <div className="flex justify-between items-center ">
           <h1 className={`font-bold text-${lightMode ? 'dark' : 'snow'} text-[24px] mt-5`}>
             Popular Staking Pools
           </h1>
 
-          <div className="hidden sm:flex justify-center items-center gap-2">
+          <div className="hidden sm:flex justify-center items-center space-x-2">
             <BsArrowLeftCircleFill
               className={
                 start == 0 ? "pointer-events-none" : "pointer-events-auto"
@@ -110,7 +110,7 @@ export default function EarnPage() {
             </div>
           ))}
         </div>
-        <div className="hidden md:flex items-centet gap-[24px] p-4 mt-5">
+        <div className="hidden md:flex items-centet gap-[24px] mt-5">
           {earnCard.slice(start, stop).map((card, idx) => (
             <div key={idx} className="w-[250px]">
               <StakingPoolsCard
@@ -122,7 +122,7 @@ export default function EarnPage() {
             </div>
           ))}
         </div>
-        <div className="p-4">
+        <div className="mt-4">
           <StakingPools />
         </div>
       </div>

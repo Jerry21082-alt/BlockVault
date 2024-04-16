@@ -59,7 +59,9 @@ export default function StakingPools() {
         <div className="flex justify-center items-center w-[40px]">
           <Image src={icon} alt="currency photo" />
         </div>
-        <span className={`text-${lightMode ? "dark" : "snow"} hidden md:block`}>{name}</span>
+        <span className={`text-${lightMode ? "dark" : "snow"} hidden md:block`}>
+          {name}
+        </span>
       </div>
 
       <span className={`text-${lightMode ? "dark" : "snow"}`}>{pos}</span>
@@ -83,7 +85,7 @@ export default function StakingPools() {
           onClick={() => filterAll(allElement, (elements) => elements)}
           className={`outline-none border-none bg-${
             filterBtn == "All" ? "primaryColor" : "secondaryLight"
-          } rounded-l-3xl py-2 px-4 text-darkSnow w-[100px]`}
+          } rounded-l-3xl py-1 px-4 text-darkSnow w-[100px]`}
         >
           All
         </button>
@@ -94,13 +96,108 @@ export default function StakingPools() {
           }
           className={`outline-none border-none bg-${
             filterBtn == "Staking" ? "primaryColor" : "secondaryLight"
-          } rounded-r-3xl py-2 px-4 w-[100px] text-darkSnow`}
+          } rounded-r-3xl py-1 px-4 w-[100px] text-darkSnow`}
         >
           Staking
         </button>
       </div>
 
-      <div className="flex justify-between mt-10 w-full md:w-[80%]">
+      <table className="w-full mt-6">
+        <thead>
+          <tr>
+            <th>
+              <span>Coin</span>
+            </th>
+            <th>
+              <span>Duration</span>
+            </th>
+            <th>
+              <span>Est.APR</span>
+            </th>
+            <th>
+              <span>Mechanism</span>
+            </th>
+            <th>
+              <span>Auto Subscribe</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {stakingPool.map((pool, i) => (
+            <tr
+              key={i}
+              className={`${
+                stakingPool[stakingPool.length - 1] === pool
+                  ? "border-b-0"
+                  : "border-b"
+              } ${lightMode ? "border-darkSnow" : "border-secondaryLight"}`}
+            >
+              <td>
+                <div className="flex items-center space-x-4 my-4">
+                  <div className="w-8 h-8">
+                    <div dangerouslySetInnerHTML={{ __html: pool.icon }} />
+                  </div>
+                  <span
+                    className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                  >
+                    {pool.name}
+                  </span>
+                </div>
+              </td>
+
+              <td>
+                <span
+                  className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                >
+                  {pool.pos}
+                </span>
+              </td>
+
+              <td>
+                <span
+                  className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                >
+                  {pool.percentage}
+                </span>
+              </td>
+
+              <td>
+                <span
+                  className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                >
+                  {pool.machanism}
+                </span>
+              </td>
+
+              <td>
+                <div className="flex items-center justify-between w-full">
+                  <button
+                    type="button"
+                    className={`flex items-center justify-end bg-${
+                      lightMode ? "darkSnow" : "secondaryLight"
+                    } rounded-3xl w-[40px] h-[25px] p-1`}
+                  >
+                    <div
+                      // onClick={() => setLightMode((prev) => !prev)}
+                      className={`rounded-full w-[20px] h-[20px] transform bg-primaryColor cursor-pointer ${
+                        lightMode ? "set-light-mode" : "set-dark-mode"
+                      }`}
+                    />
+                  </button>
+
+                  <button className={`max-w-32 border-2 ${lightMode ? 'border border-grayColor' : 'border border-darkSnow'} outline-none rounded-3xl py-1 px-4 text-primaryColor`}>
+                    <span
+                      className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                    >Subscribe</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* <div className="flex justify-between mt-10 w-full md:w-[80%]">
         <h4 className="text-grayColor font-semibold">Coin</h4>
         <h4 className="text-grayColor font-semibold">Duration</h4>
         <h4 className="text-grayColor font-semibold">Est.APR</h4>
@@ -111,9 +208,9 @@ export default function StakingPools() {
         <h4 className="text-grayColor font-semibold hidden md:block">
           Auto Subscribe
         </h4>
-      </div>
+      </div> */}
 
-      <div className="mt-5">
+      {/* <div className="mt-5">
         {poolItems.map((pool, index) => (
           <div
             key={index}
@@ -141,7 +238,7 @@ export default function StakingPools() {
                     : `bg-${lightMode ? "darkSnow" : "secondaryDark"} ${
                         lightMode
                           ? null
-                          : "border-secondaryLight border border-2"
+                          : "border-secondaryLight border-2"
                       }`
                 } rounded-3xl w-[40px] h-[25px] p-1 transition-all`}
               >
@@ -168,8 +265,8 @@ export default function StakingPools() {
                   !pool.isSub
                     ? `${
                         lightMode
-                          ? "border border-2 border-grayColor text-grayColor"
-                          : "border border-2 border-snow"
+                          ? "border-2 border-grayColor text-grayColor"
+                          : "border-2 border-snow"
                       }`
                     : null
                 }`}
@@ -179,7 +276,7 @@ export default function StakingPools() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

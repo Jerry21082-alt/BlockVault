@@ -7,19 +7,23 @@ import NotificationPanel from "./NotificationPanel";
 import Spinner from "./Spinner";
 
 export default function Layout({ children }) {
-  const { searchInput, lightMode, isLoading } = contextFunc();
+  const { isLoading, lightMode } = contextFunc();
   return (
-    <>
+    <div>
       {isLoading && <Spinner />}
       <Nav />
-      {searchInput && <SearchResults />}
-      <div className="flex mt-[3.5rem] w-screen">
-        <div className="w-[20%]">
-          <SideBar />
-        </div>
-        <div className={`${lightMode ? 'bg-darkSnow' : 'bg-secondaryDark'} absolute right-0 w-full h-full md:w-[80%]`}>{children}</div>
+      <SearchResults />
+      <div className="w-[20%]">
+        <SideBar />
+      </div>
+      <div
+        className={`absolute right-0 w-full ${
+          lightMode ? "bg-darkSnow" : "bg-secondaryDark"
+        } md:w-[80%] p-2 md:p-4 mt-14 min-h-screen layout-bg`}
+      >
+        {children}
       </div>
       <NotificationPanel />
-    </>
+    </div>
   );
 }
