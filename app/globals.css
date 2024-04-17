@@ -110,10 +110,10 @@ thead tr {
   transition: transform 1s ease-in-out;
 }
 
-.swap div, 
+.swap div,
 .exchange section,
 .exchange div {
-  transition: border .3 ease-in-out;
+  transition: border 0.3 ease-in-out;
 }
 
 /* .search-result {
@@ -152,6 +152,16 @@ thead tr {
   opacity: 0;
   visibility: hidden;
   transform: translate3d(-1rem, 0, 0);
+}
+
+.open-side-bar {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.close-side-bar {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.4s ease-in-out;
 }
 
 .show-close {
@@ -230,7 +240,6 @@ thead tr {
 .flex-item:last-child {
   margin-right: 0;
 }
-
 
 /* .transaction-history table {
   display: none;
