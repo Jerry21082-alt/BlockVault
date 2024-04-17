@@ -7,9 +7,17 @@ import Market from "@/components/Market";
 import Layout from "@/components/Layout";
 import Dashboard from "@/components/Dashboard";
 import { contextFunc } from "@/components/useStateContext/StateContext";
+import { getTimesStamps } from "@/helpers/timeStamps";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const { lightMode } = contextFunc();
+  const [height, setHeight] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setHeight(ref.current.clientWidth * 1 / 1);
+  }, [ref]);
 
   return (
     <Layout>
@@ -21,6 +29,8 @@ export default function Page() {
               className={`aspect-square w-56 h-64 md:w-full md:h-auto rounded-lg flex-item p-4 ${
                 lightMode ? "bg-snow" : "bg-secondarySemiDark"
               }`}
+              style={{ height: `${height}px` }}
+              ref={ref}
             >
               <div className="w-full flex items-center justify-between">
                 <div className="flex items-center space-x-3">
