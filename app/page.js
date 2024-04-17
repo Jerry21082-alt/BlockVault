@@ -26,7 +26,7 @@ export default function Page() {
           {exchangeCard.map((card, index) => (
             <div
               key={index}
-              className={`aspect-square w-56 h-64 md:w-full md:h-auto rounded-lg flex-item p-4 ${
+              className={`relative aspect-square w-56 md:w-full md:h-auto rounded-lg flex-item p-4 ${
                 lightMode ? "bg-snow" : "bg-secondarySemiDark"
               }`}
               style={{ height: `${height}px` }}
@@ -106,7 +106,7 @@ export default function Page() {
                   )}
                 </div>
               </div>
-              <div className="w-full h-16 mt-8">
+              <div className="w-full absolute bottom-1 right-0 left-0">
                 <Image
                   src={
                     card.position.gain
