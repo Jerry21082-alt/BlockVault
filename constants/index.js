@@ -141,6 +141,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Bitcoin",
+    short: "BTC",
   },
   {
     currency: `<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
@@ -169,6 +170,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Ethereum",
+    short: "ETH",
   },
   {
     currency: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1598"><g fill="#f70000"><path d="M995 563L0 1588 1000 0l1000 1598z"/><path d="M1140 971H828l160-172 152 173m-600 281h896l-182-182-538 2v1l-176 176"/></g></svg>`,
@@ -180,6 +182,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Polkadot",
+    short: "POL",
   },
   {
     currency: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -215,6 +218,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Ark",
+    short: "ARK",
   },
   {
     currency: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.41 337.42"><defs><style>.cls-1{fill:#f0b90b;stroke:#f0b90b;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M168.2.71l41.5,42.5L105.2,147.71l-41.5-41.5Z"/><path class="cls-1" d="M231.2,63.71l41.5,42.5L105.2,273.71l-41.5-41.5Z"/><path class="cls-1" d="M42.2,126.71l41.5,42.5-41.5,41.5L.7,169.21Z"/><path class="cls-1" d="M294.2,126.71l41.5,42.5L168.2,336.71l-41.5-41.5Z"/></g></g></svg>`,
@@ -226,6 +230,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Dash",
+    short: "DSH",
   },
   {
     currency: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.4 416.8"><defs><style>.cls-1{fill:#008de4;}</style></defs><title>d</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M336.25,0H149.35l-15.5,86.6,168.7.2c83.1,0,107.6,30.2,106.9,80.2-.4,25.6-11.5,69-16.3,83.1-12.8,37.5-39.1,80.2-137.7,80.1l-164-.1L76,416.8h186.5c65.8,0,93.7-7.7,123.4-21.3,65.7-30.5,104.8-95.3,120.5-179.9C529.65,89.6,500.65,0,336.25,0"/><path class="cls-1" d="M68.7,164.9c-49,0-56,31.9-60.6,51.2C2,241.3,0,251.6,0,251.6H191.4c49,0,56-31.9,60.6-51.2,6.1-25.2,8.1-35.5,8.1-35.5Z"/></g></g></svg>`,
@@ -237,6 +242,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Solana",
+    short: "SOL",
   },
   {
     currency: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -261,6 +267,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Litecoin",
+    short: "LIT",
   },
   {
     currency: `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.6 82.6"><title>litecoin-ltc-logo</title><circle cx="41.3" cy="41.3" r="36.83" style="fill:#fff"/><path d="M41.3,0A41.3,41.3,0,1,0,82.6,41.3h0A41.18,41.18,0,0,0,41.54,0ZM42,42.7,37.7,57.2h23a1.16,1.16,0,0,1,1.2,1.12v.38l-2,6.9a1.49,1.49,0,0,1-1.5,1.1H23.2l5.9-20.1-6.6,2L24,44l6.6-2,8.3-28.2a1.51,1.51,0,0,1,1.5-1.1h8.9a1.16,1.16,0,0,1,1.2,1.12v.38L43.5,38l6.6-2-1.4,4.8Z" style="fill:#345d9d"/></svg>`,
@@ -272,6 +279,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Xrp",
+    short: "XRP",
   },
   {
     currency: `<svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -294,6 +302,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Theta",
+    short: 'TET'
   },
 ];
 
@@ -955,7 +964,7 @@ export const cryptoArray = [
     volume24h: 600000000,
     circulatingSupply: 6000000000,
     percentChange24h: 2.3,
-    short: 'POL'
+    short: "POL",
   },
   {
     icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -983,7 +992,7 @@ export const cryptoArray = [
     volume24h: 400000000,
     circulatingSupply: 64000000000,
     percentChange24h: -0.7,
-    short: 'KNK'
+    short: "KNK",
   },
   {
     icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1115,7 +1124,7 @@ export const cryptoArray = [
     volume24h: 300000000,
     circulatingSupply: 75000000,
     percentChange24h: 0.9,
-    short: 'CEL'
+    short: "CEL",
   },
   {
     icon: `<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 433 433" ><defs><linearGradient id="a" x1="112.27" y1="112.27" x2="320.73" y2="320.73" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2ab8e6"/><stop offset=".53" stop-color="#29cad2"/><stop offset="1" stop-color="#2ee4be"/></linearGradient><linearGradient id="b" x1="175.55" y1="175.91" x2="258.18" y2="258.54" xlink:href="#a"/></defs><title>theta</title><path fill="#1b1f2b" d="M0 0h433v433H0z"/><path fill="#1b1f2b" stroke-linejoin="bevel" stroke-width="27.222" stroke="url(#a)" d="M145.06 93.1h142.89v246.81H145.06z"/><path d="M259.8 255.47h-29.59v31h-26.7v-31h-29.59v-26.7h85.88zm0-76.5h-29.59v-31h-26.7v31h-29.59v26.7h85.88z" fill="url(#b)"/></svg>`,
@@ -1125,7 +1134,7 @@ export const cryptoArray = [
     volume24h: 600000000,
     circulatingSupply: 1000000000,
     percentChange24h: 1.2,
-    short: 'THE'
+    short: "THE",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.36 200"><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M203,26.16l-28.46,14.5-137.43,70a82.49,82.49,0,0,1-.7-10.69A81.87,81.87,0,0,1,158.2,28.6l16.29-8.3,2.43-1.24A100,100,0,0,0,18.18,100q0,3.82.29,7.61a18.19,18.19,0,0,1-9.88,17.58L0,129.57V150l25.29-12.89,0,0,8.19-4.18,8.07-4.11v0L186.43,55l16.28-8.29,33.65-17.15V9.14Z"/><path d="M236.36,50,49.78,145,33.5,153.31,0,170.38v20.41l33.27-16.95,28.46-14.5L199.3,89.24A83.45,83.45,0,0,1,200,100,81.87,81.87,0,0,1,78.09,171.36l-1,.53-17.66,9A100,100,0,0,0,218.18,100c0-2.57-.1-5.14-.29-7.68a18.2,18.2,0,0,1,9.87-17.58l8.6-4.38Z"/></g></g></svg>`,
@@ -1135,7 +1144,7 @@ export const cryptoArray = [
     volume24h: 700000000,
     circulatingSupply: 23000000000,
     percentChange24h: -0.4,
-    short: 'STL'
+    short: "STL",
   },
   {
     icon: `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169.87 1593"><title>tezos-logo-01</title><g id="Layer_2" data-name="Layer 2"><path d="M755.68,1593q-170.51,0-248.91-82.14a253.6,253.6,0,0,1-78.15-177,117.39,117.39,0,0,1,13.69-58.5A101.21,101.21,0,0,1,479.64,1238a130.22,130.22,0,0,1,116.24,0A99.55,99.55,0,0,1,633,1275.36a115,115,0,0,1,14.18,58.5,111.73,111.73,0,0,1-19.91,68.45,92.78,92.78,0,0,1-47.31,34.62,129.18,129.18,0,0,0,74.67,46.55,370,370,0,0,0,101.8,14.68,226.91,226.91,0,0,0,128.19-38.33,224,224,0,0,0,83.63-113.25,492,492,0,0,0,27.38-169.5,465.07,465.07,0,0,0-29.87-176.23,217.54,217.54,0,0,0-86.37-109.52,229.68,229.68,0,0,0-124.43-35.59,236.75,236.75,0,0,0-107.78,36.59L567.26,932.4V892.33L926.43,410.5H428.62v500A178.9,178.9,0,0,0,456,1012.8a94.34,94.34,0,0,0,83.63,40.07,139.85,139.85,0,0,0,82.63-29.12,298.38,298.38,0,0,0,69.2-71.19,24.86,24.86,0,0,1,9-11.94,18.4,18.4,0,0,1,12-4.48,41.55,41.55,0,0,1,23.4,9.95,49.82,49.82,0,0,1,12.69,33.85,197.86,197.86,0,0,1-4.48,24.89,241,241,0,0,1-85.38,106,211.78,211.78,0,0,1-119.76,36.38q-161.67,0-224-63.72A238.67,238.67,0,0,1,253.2,909.25V410.5H0V317.6H254.38V105.78L196.14,47.5V0h169l63.48,32.86V317.6l657.6-2,65.47,65.71L748.46,786.5a271,271,0,0,1,76.16-18.42A330.1,330.1,0,0,1,972,810.15a302.7,302.7,0,0,1,126.95,113.29,399.78,399.78,0,0,1,57.25,136.65,575.65,575.65,0,0,1,13.69,117,489.39,489.39,0,0,1-49.78,216.79,317.92,317.92,0,0,1-149.35,149.35A483.27,483.27,0,0,1,755.68,1593Z" style="fill:#2c7df7"/></g></svg>`,
@@ -1145,7 +1154,7 @@ export const cryptoArray = [
     volume24h: 400000000,
     circulatingSupply: 850000000,
     percentChange24h: -0.1,
-    short: 'TEZ'
+    short: "TEZ",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.4 416.8"><defs><style>.cls-1{fill:#008de4;}</style></defs><title>d</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M336.25,0H149.35l-15.5,86.6,168.7.2c83.1,0,107.6,30.2,106.9,80.2-.4,25.6-11.5,69-16.3,83.1-12.8,37.5-39.1,80.2-137.7,80.1l-164-.1L76,416.8h186.5c65.8,0,93.7-7.7,123.4-21.3,65.7-30.5,104.8-95.3,120.5-179.9C529.65,89.6,500.65,0,336.25,0"/><path class="cls-1" d="M68.7,164.9c-49,0-56,31.9-60.6,51.2C2,241.3,0,251.6,0,251.6H191.4c49,0,56-31.9,60.6-51.2,6.1-25.2,8.1-35.5,8.1-35.5Z"/></g></g></svg>`,
@@ -1155,7 +1164,7 @@ export const cryptoArray = [
     volume24h: 100000000,
     circulatingSupply: 10000000,
     percentChange24h: 1.5,
-    short: 'DSH'
+    short: "DSH",
   },
   {
     icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1275,7 +1284,7 @@ export const cryptoArray = [
     volume24h: 80000000,
     circulatingSupply: 5000000,
     percentChange24h: 1.8,
-    short: 'SHI'
+    short: "SHI",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2500 2500"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="782.84" y1="165.91" x2="799.34" y2="165.91" gradientTransform="translate(-81568.2 55372.05) rotate(-45) scale(122.41)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#cf8724"/><stop offset="1" stop-color="#fdce58"/></linearGradient></defs><title>z</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M1263.05,2297.61c-569.6,0-1034.57-465.43-1034.57-1034.56,0-569.6,465.44-1034.57,1034.57-1034.57,569.6,0,1034.56,465.44,1034.56,1034.57C2297.61,1832.65,1832.65,2297.61,1263.05,2297.61Z"/><path d="M1250,2500C562.5,2500,0,1937.5,0,1250S562.5,0,1250,0,2500,562.5,2500,1250,1937.5,2500,1250,2500Zm0-2222.06c-534.56,0-972.06,437.5-972.06,972.06s437.5,972.06,972.06,972.06,972.06-437.5,972.06-972.06S1784.56,277.94,1250,277.94Z"/><path d="M1221.05,1588.59h541.67v270.84h-319.6v229.16H1165.18V1866.53H831.85c0-90.44-13.73-180.4,7.1-263.73,7.1-41.67,55.4-83.34,90.43-125,104.17-125,208.34-250,319.61-375,41.66-48.77,83.33-90.44,132.1-145.83H860.26V686.13h305.39V457h270.84V679h333.33c0,90.43,13.73,180.4-7.1,263.73-7.1,41.67-55.4,83.33-90.44,125-104.16,125-208.33,250-319.6,375C1311,1491.53,1269.35,1539.82,1221.05,1588.59Z"/></g></g></svg>`,
@@ -1285,7 +1294,7 @@ export const cryptoArray = [
     volume24h: 90000000,
     circulatingSupply: 13000000,
     percentChange24h: 0.5,
-    short: 'ZCH'
+    short: "ZCH",
   },
   {
     icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1320,7 +1329,7 @@ export const cryptoArray = [
     volume24h: 40000000,
     circulatingSupply: 100000000,
     percentChange24h: 0.3,
-    short: 'SYX'
+    short: "SYX",
   },
   {
     icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1354,7 +1363,7 @@ export const cryptoArray = [
     volume24h: 150000000,
     circulatingSupply: 15000000,
     percentChange24h: 3.2,
-    short: 'INJ'
+    short: "INJ",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 441 441"><defs><style>.cls-1{stroke:#000;stroke-miterlimit:10;}.cls-2{fill:#fff;}</style></defs><title>kusama-ksm-logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" x="0.5" y="0.5" width="40" height="40"/><path class="cls-2" d="M373.6,127.4c-5.2-4.1-11.4-9.7-22.7-11.1-10.6-1.4-21.4,5.7-28.7,10.4s-21.1,18.5-26.8,22.7-20.3,8.1-43.8,22.2-115.7,73.3-115.7,73.3l24,.3-107,55.1H63.6L48.2,312s13.6,3.6,25-3.6v3.3s127.4-50.2,152-37.2l-15,4.4c1.3,0,25.5,1.6,25.5,1.6a34.34,34.34,0,0,0,15.4,24.8c14.6,9.6,14.9,14.9,14.9,14.9s-7.6,3.1-7.6,7c0,0,11.2-3.4,21.6-3.1a82.64,82.64,0,0,1,19.5,3.1s-.8-4.2-10.9-7-20.1-13.8-25-19.8a28,28,0,0,1-4.1-27.4c3.5-9.1,15.7-14.1,40.9-27.1,29.7-15.4,36.5-26.8,40.7-35.7s10.4-26.6,13.9-34.9c4.4-10.7,9.8-16.4,14.3-19.8s24.5-10.9,24.5-10.9S378.5,131.3,373.6,127.4Z"/></g></g></svg>`,
@@ -1364,7 +1373,7 @@ export const cryptoArray = [
     volume24h: 60000000,
     circulatingSupply: 5000000,
     percentChange24h: -0.9,
-    short: 'KSA'
+    short: "KSA",
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1598"><g fill="#f70000" width='40' height='40'><path d="M995 563L0 1588 1000 0l1000 1598z"/><path d="M1140 971H828l160-172 152 173m-600 281h896l-182-182-538 2v1l-176 176"/></g></svg>`,
@@ -1374,7 +1383,7 @@ export const cryptoArray = [
     volume24h: 200000000,
     circulatingSupply: 3000000000,
     percentChange24h: 0.2,
-    short: 'ARK'
+    short: "ARK",
   },
 ];
 

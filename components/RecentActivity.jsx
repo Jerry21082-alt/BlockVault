@@ -84,7 +84,7 @@ export default function RecentActivity() {
           Recent Activities
         </h3>
       </div>
-      <div className="flex justify-start items-center gap-2 mt-5">
+      <div className="flex justify-start items-center space-x-2 mt-5">
         <span
           className={`${lightMode ? "text-dark" : "text-grayColor"} text-sm`}
         >
@@ -205,7 +205,7 @@ export default function RecentActivity() {
           <span className="text-grayColor">
             Showing 1 of {transHis.length} Entries
           </span>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center space-x-1">
             {[1, 2, 3, "Next"].map((i, x) => (
               <div
                 onClick={() => setActive(i)}

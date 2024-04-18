@@ -16,7 +16,7 @@ export default function Wallet() {
         Popular Staking Pools
       </h4>
       <section className="flex flex-col md:flex-row w-full mt-4 overflow-auto md:overflow-hidden wallet">
-        <div className="flex flex-col md:flex-row w-full gap-4">
+        <div className="flex flex-col md:flex-row w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0">
           <WalletSection />
           <RecentActivity />
         </div>

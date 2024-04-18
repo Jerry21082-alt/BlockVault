@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Partner from "@/components/Partner";
 import Layout from "@/components/Layout";
-import { behance_logo, mastCard_logo, visa_logo } from "@/public/paymentLogos";
 import { contextFunc } from "@/components/useStateContext/StateContext";
 import { paymentPartner } from "@/constants";
 
@@ -59,7 +58,7 @@ export default function BuyCrypto() {
         </div>
 
         <section
-          className={`mt-4 rounded-md p-4 ${
+          className={`mt-4 rounded-md p-2 md:p-4 ${
             lightMode ? "bg-snow" : "bg-secondarySemiDark"
           }`}
         >
@@ -118,13 +117,13 @@ export default function BuyCrypto() {
           </h2>
 
           <table className="mt-4 w-full">
-            <thead>
+            <thead className="w-full">
               <tr>
                 <th>Payment Partner</th>
                 <th>Reference Price(USD)</th>
                 <th>Single Order Limit(USDT)</th>
-                <th>Payment Methods</th>
-                <th>Operation</th>
+                <th className="hidden md:table-cell">Payment Methods</th>
+                <th className="hidden md:table-cell">Operation</th>
               </tr>
             </thead>
 
@@ -133,17 +132,25 @@ export default function BuyCrypto() {
                 <tr key={i}>
                   <td>
                     <div className="flex items-center my-2">
-                      <div className="w-8 h-8 my-2">
+                      <div className="w-6 md:w-8 h-6 md:h-6 my-2">
                         <div
                           dangerouslySetInnerHTML={{ __html: partner.currency }}
                         />
                       </div>
                       <span
-                        className={`ml-4 ${
+                        className={`ml-2 hidden md:inline-block ${
                           lightMode ? "text-grayColor" : "text-darkSnow"
                         }`}
                       >
                         {partner.name}
+                      </span>
+
+                      <span
+                        className={`ml-2 inline-block md:hidden ${
+                          lightMode ? "text-grayColor" : "text-darkSnow"
+                        }`}
+                      >
+                        {partner.short}
                       </span>
                     </div>
                   </td>
@@ -175,7 +182,7 @@ export default function BuyCrypto() {
                     {partner.limit}
                   </td>
 
-                  <td>
+                  <td className="hidden md:table-cell">
                     <div className="flex items-center space-x-1">
                       <div
                         className={`w-16 h-8 flex items-center justify-center rounded bg-dark`}
@@ -239,10 +246,10 @@ export default function BuyCrypto() {
                     </div>
                   </td>
 
-                  <td>
+                  <td className="hidden md:table-cell">
                     <button
                       type="button"
-                      className={`w-28 flex items-center justify-center space-x-3 rounded-3xl border-2 border-darkSnow active:scale-95 hover:bg-primaryColor py-2 px-4 ${
+                      className={`md:w-28 flex items-center justify-center space-x-3 rounded-3xl border-2 border-darkSnow active:scale-95 hover:bg-primaryColor py-2 px-4 ${
                         lightMode ? "text-secondaryLight" : "text-darkSnow"
                       } hover:text-darkSnow`}
                     >
@@ -274,6 +281,34 @@ export default function BuyCrypto() {
                         </svg>
                       )}
                     </button>
+                  </td>
+
+                  <td className="table-cell md:hidden">
+                    {isButtonActive === "buy" ? (
+                      <svg
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill={lightMode ? "#000" : "#fff"}
+                      >
+                        <title>shopping-cart</title>
+                        <path d="M20.756 5.345c-0.191-0.219-0.466-0.345-0.756-0.345h-13.819l-0.195-1.164c-0.080-0.482-0.497-0.836-0.986-0.836h-2.25c-0.553 0-1 0.447-1 1s0.447 1 1 1h1.403l1.86 11.164c0.008 0.045 0.031 0.082 0.045 0.124 0.016 0.053 0.029 0.103 0.054 0.151 0.032 0.066 0.075 0.122 0.12 0.179 0.031 0.039 0.059 0.078 0.095 0.112 0.058 0.054 0.125 0.092 0.193 0.13 0.038 0.021 0.071 0.049 0.112 0.065 0.116 0.047 0.238 0.075 0.367 0.075 0.001 0 11.001 0 11.001 0 0.553 0 1-0.447 1-1s-0.447-1-1-1h-10.153l-0.166-1h11.319c0.498 0 0.92-0.366 0.99-0.858l1-7c0.041-0.288-0.045-0.579-0.234-0.797zM18.847 7l-0.285 2h-3.562v-2h3.847zM14 7v2h-3v-2h3zM14 10v2h-3v-2h3zM10 7v2h-3c-0.053 0-0.101 0.015-0.148 0.030l-0.338-2.030h3.486zM7.014 10h2.986v2h-2.653l-0.333-2zM15 12v-2h3.418l-0.285 2h-3.133z"></path>
+                        <path d="M10 19.5c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.828 0.672-1.5 1.5-1.5s1.5 0.672 1.5 1.5z"></path>
+                        <path d="M19 19.5c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.828 0.672-1.5 1.5-1.5s1.5 0.672 1.5 1.5z"></path>
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 50 50"
+                        fill={lightMode ? "#000" : "#fff"}
+                      >
+                        <path d="M 12 0 C 10.897 0 10 0.897 10 2 L 10 22 C 10 23.103 10.897 24 12 24 L 42 24 C 43.103 24 44 23.103 44 22 L 44 2 C 44 0.897 43.103 0 42 0 L 12 0 z M 22.5 5 L 31.5 5 C 32.328 5 33 5.672 33 6.5 C 33 7.328 32.328 8 31.5 8 L 22.5 8 C 21.672 8 21 7.328 21 6.5 C 21 5.672 21.672 5 22.5 5 z M 13.40625 27.90625 C 10.90625 27.90625 8.7 28.8 0.5 32.5 C -1.7763568e-15 32.7 -0.2 33.3125 0 33.8125 L 5.3125 45.59375 C 5.4125 45.89375 5.70625 46.0875 5.90625 46.1875 C 6.20625 46.2885 6.4875 46.19375 6.6875 46.09375 L 9.40625 44.3125 C 10.60625 43.5115 11.0875 43.3885 12.6875 44.1875 L 14.8125 45.3125 C 17.3125 46.6125 20.6875 48.40625 21.6875 48.90625 C 23.2875 49.70625 24.5875 50 25.6875 50 C 27.6875 50 28.9875 49.20625 30.1875 48.40625 C 31.3875 47.60625 46.0125 38.0875 47.3125 37.1875 C 48.9135 36.0875 49.90625 34.8125 49.90625 33.8125 C 50.00525 31.0105 47.30625 30.3125 44.90625 31.8125 L 34.1875 39 C 32.4875 40 31 39.90625 30 39.90625 L 24 39.90625 C 21.3 39.90625 18.00625 38.90625 17.90625 38.90625 C 17.60625 38.80625 17.49375 38.5125 17.59375 38.3125 C 17.69375 38.0125 17.8875 37.9 18.1875 38 L 18.3125 38 C 18.6125 38.101 21.9125 39 24.3125 39 L 30 39 C 30.8 39 31.4125 38.801 31.8125 38.5 C 32.2125 38.2 32.4875 37.9 32.6875 37.5 C 32.6875 37.4 32.8125 37.4115 32.8125 37.3125 L 32.8125 37.1875 C 32.9135 36.8875 32.90625 36.70625 32.90625 36.40625 C 32.90625 35.20625 31.90625 34.00625 29.90625 33.90625 C 28.30525 33.80625 26.1125 33.40625 24.3125 32.90625 C 23.3125 32.60625 22.5875 32.29375 22.1875 32.09375 C 21.8875 31.89375 21.5875 31.5875 21.1875 31.1875 C 19.9875 29.8875 18.20625 27.90625 13.40625 27.90625 z M 35.09375 28 C 33.99375 28 32.8125 28.39375 31.8125 29.09375 C 31.1125 29.49375 28.1125 31.401 26.3125 32.5 C 27.6135 32.8 29 33 30 33 C 30.7 33 31.40625 33.20625 31.90625 33.40625 L 38.40625 29 C 38.40625 29 36.89475 28 35.09375 28 z M 41.6875 29 C 40.6875 29 39.5125 29.4 37.8125 30.5 L 32.8125 33.90625 C 33.6125 34.60725 34 35.50625 34 36.40625 C 34 37.00625 33.80625 37.7125 33.40625 38.3125 L 33.5 38.1875 L 33.59375 38.09375 L 44.59375 30.8125 C 44.29375 29.5135 42.6875 29 41.6875 29 z" />
+                      </svg>
+                    )}
                   </td>
                 </tr>
               ))}

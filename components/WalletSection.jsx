@@ -33,13 +33,13 @@ export default function WalletSection() {
               : lightMode
               ? "border-darkSnow border-b"
               : "border-secondaryLight border-b"
-          } py-3 gap-5`}
+          } py-3 space-x-4`}
         >
           <div className="w-[40px]">
             <div dangerouslySetInnerHTML={{ __html: wallet.currency }}></div>
           </div>
 
-          <div className="flex items-start flex-col gap-2">
+          <div className="flex items-start flex-col space-y-2">
             <div>
               <p className={`${lightMode ? "text-dark" : "text-snow"}`}>
                 {wallet.currencyName}
@@ -48,12 +48,12 @@ export default function WalletSection() {
                 {wallet.rate}
               </p>
             </div>
-            <div className="flex items-center gap-2">
-              <button className="w-24 border-2 border-primaryColor outline-none rounded-3xl py-1 px-4 text-primaryColor hover:bg-primaryColor hover:text-darkSnow active:scale-95">
+            <div className="flex items-center space-x-2">
+              <button className="w-24 border-2 border-primaryColor outline-none rounded-3xl py-1 px-4 text-primaryColor active:bg-primaryColor active:text-darkSnow active:scale-95">
                 Send
               </button>
               <button
-                className={`border-2 w-24 hover:bg-secondaryLight hover:text-darkSnow active:scale-95 ${
+                className={`border-2 w-24 active:bg-secondaryLight active:text-darkSnow active:scale-95 ${
                   lightMode ? "border-secondaryLight" : "border-snow"
                 } outline-none rounded-3xl py-1 px-4 ${
                   lightMode ? "text-dark" : "text-snow"

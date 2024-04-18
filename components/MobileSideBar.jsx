@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { contextFunc } from "./useStateContext/StateContext";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 const sideBarLinks = [
   {
@@ -28,6 +29,11 @@ const sideBarLinks = [
     href: "/exchange",
     link: "Exchange",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"  id="exchange"><path d="M22.57 14.1a1 1 0 0 0-.57.9v3h-8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h8v3a1 1 0 0 0 1.66.75l6-5.23a1 1 0 0 0 .34-.75 1 1 0 0 0-.38-.76l-6-4.77a1 1 0 0 0-1.05-.14zM9.43 17.9A1 1 0 0 0 10 17v-3h8a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-8V7a1 1 0 0 0-1.66-.75l-6 5.23a1 1 0 0 0-.34.75 1 1 0 0 0 .38.76l6 4.77a1 1 0 0 0 1.05.14z"></path></svg>`,
+  },
+  {
+    href: "/wallet",
+    link: "Wallet",
+    icon: `<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 10c3.976 0 8-1.374 8-4s-4.024-4-8-4-8 1.374-8 4 4.024 4 8 4z"/><path d="M4 10c0 2.626 4.024 4 8 4s8-1.374 8-4V8c0 2.626-4.024 4-8 4s-8-1.374-8-4v2z"/><path d="M4 14c0 2.626 4.024 4 8 4s8-1.374 8-4v-2c0 2.626-4.024 4-8 4s-8-1.374-8-4v2z"/><path d="M4 18c0 2.626 4.024 4 8 4s8-1.374 8-4v-2c0 2.626-4.024 4-8 4s-8-1.374-8-4v2z"/></svg>`,
   },
   {
     href: "/earn",
@@ -56,10 +62,32 @@ export default function MobileSideBar() {
   const { lightMode, setLightMode, toggleBar, setToggleBar } = contextFunc();
 
   const pathname = usePathname();
+  const sideBarRef = useRef();
+
+  const onClose = () => {
+    if (toggleBar) {
+      setToggleBar(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleSidebarClose = (ev) => {
+      if (sideBarRef.current && !sideBarRef.current.contains(ev.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("click", handleSidebarClose);
+
+    return () => document.removeEventListener("click", handleSidebarClose);
+  }, [toggleBar, onClose]);
 
   return (
     <div
-      className={`mobile-sidebar ${lightMode ? 'light' : 'dark'} block md:hidden fixed h-screen left-0 top-14 p-4 z-50 ${
+      ref={sideBarRef}
+      className={`mobile-sidebar ${
+        lightMode ? "light" : "dark"
+      } block md:hidden fixed h-screen left-0 top-14 p-4 z-50 ${
         toggleBar ? "open-sidebar" : "close-sidebar"
       }`}
       style={{ background: lightMode ? "#e9eedf" : "#1f183e" }}
@@ -128,7 +156,7 @@ export default function MobileSideBar() {
           <button
             type="button"
             className={`flex items-center justify-end rounded-3xl w-[40px] h-[25px] p-1`}
-            style={{backgroundColor: lightMode ? '#8b86a1' : '#463a6c'}}
+            style={{ backgroundColor: lightMode ? "#8b86a1" : "#463a6c" }}
           >
             <div
               onClick={() => setLightMode((prev) => !prev)}

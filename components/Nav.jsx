@@ -21,18 +21,6 @@ export default function Nav() {
 
   const pathname = usePathname();
 
-  // const handleEnterSearch = (ev) => {
-  //   if(ev.key === 'Enter') {
-  //     updateBestMatches()
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   document.addEventListener('keydown', handleEnterSearch)
-
-  //   return () => document.removeEventListener('keydown', handleEnterSearch)
-  // }, [])
-
   return (
     <div
       className={`nav fixed top-0 w-screen bg-${
@@ -95,7 +83,7 @@ export default function Nav() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-3">
+      <div className="flex items-center justify-center space-x-3">
         <IoIosNotifications
           onClick={() => setToggleNotification((prev) => !prev)}
           color="#8b86a1"
@@ -104,9 +92,9 @@ export default function Nav() {
         />
         <BiSolidUser color="#8b86a1" size={20} cursor={`pointer`} />
 
-        <Link href={`/wallet`} className="block md:hidden">
+        {/* <Link href={`/wallet`} className="block md:hidden">
           <IoIosWallet color="#8b86a1" size={20} />
-        </Link>
+        </Link> */}
 
         <Link
           href={`/wallet`}

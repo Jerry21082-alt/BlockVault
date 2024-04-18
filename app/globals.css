@@ -75,11 +75,11 @@ body table th {
 }
 
 .market table thead th {
-  padding: 0 12px;
+  padding: 0 8px;
 }
 
 .buy-crypto table thead th {
-  padding: 12px 12px;
+  padding: 12px 0px;
 }
 
 tbody tr {
