@@ -154,14 +154,12 @@ thead tr {
   transform: translate3d(-1rem, 0, 0);
 }
 
-.open-side-bar {
+.open-sidebar {
   transform: translate3d(0, 0, 0);
-  transition: transform 0.4s ease-in-out;
 }
 
-.close-side-bar {
+.close-sidebar {
   transform: translate3d(-100%, 0, 0);
-  transition: transform 0.4s ease-in-out;
 }
 
 .show-close {
@@ -241,6 +239,20 @@ thead tr {
   margin-right: 0;
 }
 
-/* .transaction-history table {
-  display: none;
-} */
+.mobile-sidebar {
+  /* height: calc(100vh - 56px); */
+  transition: background .4s ease-in-out, transform .4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.mobile-sidebar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-sidebar.light svg {
+  fill: #8b86a1;
+}
+
+.mobile-sidebar.dark ul svg {
+  fill: #e9eedf;
+}

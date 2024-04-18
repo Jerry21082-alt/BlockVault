@@ -13,7 +13,7 @@ import { contextFunc } from "./useStateContext/StateContext";
 export default function SideBar() {
   const pathname = usePathname();
 
-  const { toggleBar, setToggleBar, lightMode, setLightMode } = contextFunc();
+  const { setToggleBar, lightMode, setLightMode } = contextFunc();
 
   const inactiveLink = "flex items-center justify-start gap-2";
 

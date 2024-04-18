@@ -42,11 +42,11 @@ export default function Dashboard() {
   }, [stockSymbol]);
 
   return (
-    <div className="w-full h-full flex flex-col gap-4 md:flex-row mt-4">
+    <div className="w-full h-full flex flex-col gap-4 md:flex-row mt-4 dashboard-items">
       <DisplayChart stockDetails={stockDetails} />
 
       <div
-        className={`dashboard bg-${
+        className={`dashboard mr-0 md:mr-4 md:mt-0 bg-${
           lightMode ? "snow" : "secondarySemiDark"
         } rounded-lg p-4 w-full h-full md:w-[30%] md:block`}
       >

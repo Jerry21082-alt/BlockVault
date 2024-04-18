@@ -11,7 +11,7 @@ export default function Market() {
 
   return (
     <div
-      className={`market mt-5 bg-${
+      className={`market dashboard-items mt-5 bg-${
         lightMode ? "snow" : "secondarySemiDark"
       } rounded-lg`}
     >
