@@ -71,7 +71,7 @@ export default function EarnPage() {
         className={`w-full bg-${lightMode ? 'darkSnow' : 'secondaryDark'}`}
       >
         <div className="flex justify-between items-center ">
-          <h1 className={`font-bold text-${lightMode ? 'dark' : 'snow'} text-[24px] mt-5`}>
+          <h1 className={`font-bold text-${lightMode ? 'dark' : 'snow'} mt-4`}>
             Popular Staking Pools
           </h1>
 

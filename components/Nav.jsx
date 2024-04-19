@@ -12,6 +12,7 @@ import { useEffect } from "react";
 export default function Nav() {
   const {
     setToggleBar,
+    toggleBar,
     searchInput,
     setSearchInput,
     updateBestMatches,
@@ -31,9 +32,15 @@ export default function Nav() {
         <div className="flex items-center space-x-5">
           <div
             onClick={() => setToggleBar((prev) => !prev)}
-            className={`bg-grayColor rounded-md p-1`}
+            className={`bar ${toggleBar ? 'bar-open' : 'bar-closed'} bg-grayColor rounded-md p-1 h-6 flex flex-col space-y-1 items-center justify-center`}  
           >
-            <HiMenuAlt4 color={lightMode ? "#1f183e" : "#fff"} size={20} />
+            <div
+              style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }}
+            />
+
+            <div
+              style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }}
+            />
           </div>
 
           <div

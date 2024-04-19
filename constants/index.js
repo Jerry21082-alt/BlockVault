@@ -493,7 +493,7 @@ export const stakingPool = [
     name: "ARK",
     pos: "Flexible",
     percentage: 32.0,
-    isSub: true,
+    isSub: false,
     machanism: "Saving",
   },
   {
