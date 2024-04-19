@@ -302,7 +302,7 @@ export const paymentPartner = [
     },
     limit: "15-50.00",
     name: "Theta",
-    short: 'TET'
+    short: "TET",
   },
 ];
 
@@ -438,50 +438,89 @@ export const exchangeCard = [
 
 export const earnCard = [
   {
-    icon: litecoin,
-    name: "Litecoin",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+    viewBox="0 0 4091.27 4091.73"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+     <g id="Layer_x0020_1">
+      <metadata id="CorelCorpID_0Corel-Layer"/>
+      <g id="_1421344023328">
+       <path fill="#F7931A" fill-rule="nonzero" d="M4030.06 2540.77c-273.24,1096.01 -1383.32,1763.02 -2479.46,1489.71 -1095.68,-273.24 -1762.69,-1383.39 -1489.33,-2479.31 273.12,-1096.13 1383.2,-1763.19 2479,-1489.95 1096.06,273.24 1763.03,1383.51 1489.76,2479.57l0.02 -0.02z"/>
+       <path fill="white" fill-rule="nonzero" d="M2947.77 1754.38c40.72,-272.26 -166.56,-418.61 -450,-516.24l91.95 -368.8 -224.5 -55.94 -89.51 359.09c-59.02,-14.72 -119.63,-28.59 -179.87,-42.34l90.16 -361.46 -224.36 -55.94 -92 368.68c-48.84,-11.12 -96.81,-22.11 -143.35,-33.69l0.26 -1.16 -309.59 -77.31 -59.72 239.78c0,0 166.56,38.18 163.05,40.53 90.91,22.69 107.35,82.87 104.62,130.57l-104.74 420.15c6.26,1.59 14.38,3.89 23.34,7.49 -7.49,-1.86 -15.46,-3.89 -23.73,-5.87l-146.81 588.57c-11.11,27.62 -39.31,69.07 -102.87,53.33 2.25,3.26 -163.17,-40.72 -163.17,-40.72l-111.46 256.98 292.15 72.83c54.35,13.63 107.61,27.89 160.06,41.3l-92.9 373.03 224.24 55.94 92 -369.07c61.26,16.63 120.71,31.97 178.91,46.43l-91.69 367.33 224.51 55.94 92.89 -372.33c382.82,72.45 670.67,43.24 791.83,-303.02 97.63,-278.78 -4.86,-439.58 -206.26,-544.44 146.69,-33.83 257.18,-130.31 286.64,-329.61l-0.07 -0.05zm-512.93 719.26c-69.38,278.78 -538.76,128.08 -690.94,90.29l123.28 -494.2c152.17,37.99 640.17,113.17 567.67,403.91zm69.43 -723.3c-63.29,253.58 -453.96,124.75 -580.69,93.16l111.77 -448.21c126.73,31.59 534.85,90.55 468.94,355.05l-0.02 0z"/>
+      </g>
+     </g>
+    </svg>`,
+    name: "Bitcoin",
     pos: "Fixed",
     rate: 6.5,
   },
   {
-    icon: xrp,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 424"><defs><style>.cls-1{fill:#23292f;}</style></defs><title>x</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M437,0h74L357,152.48c-55.77,55.19-146.19,55.19-202,0L.94,0H75L192,115.83a91.11,91.11,0,0,0,127.91,0Z"/><path class="cls-1" d="M74.05,424H0L155,270.58c55.77-55.19,146.19-55.19,202,0L512,424H438L320,307.23a91.11,91.11,0,0,0-127.91,0Z"/></g></g></svg>`,
     name: "Xrp",
     pos: "Flexible",
     rate: 14.9,
   },
   {
-    icon: bitcoin,
-    name: "Bitcoin",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.8 43.6"><defs><style>.cls-1{fill:#2a5ada;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M18.9,0l-4,2.3L4,8.6,0,10.9V32.7L4,35l11,6.3,4,2.3,4-2.3L33.8,35l4-2.3V10.9l-4-2.3L22.9,2.3ZM8,28.1V15.5L18.9,9.2l10.9,6.3V28.1L18.9,34.4Z"/></g></g></svg>`,
+    name: "Chainlink",
     pos: "Flexible",
     rate: 8.12,
   },
   {
-    icon: bnb,
-    name: "Bnb",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+    viewBox="0 0 784.37 1277.39"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+     <g id="Layer_x0020_1">
+      <metadata id="CorelCorpID_0Corel-Layer"/>
+      <g id="_1421394342400">
+       <g>
+        <polygon fill="#343434" fill-rule="nonzero" points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54 "/>
+        <polygon fill="#8C8C8C" fill-rule="nonzero" points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33 "/>
+        <polygon fill="#3C3C3B" fill-rule="nonzero" points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89 "/>
+        <polygon fill="#8C8C8C" fill-rule="nonzero" points="392.07,1277.38 392.07,956.52 -0,724.89 "/>
+        <polygon fill="#141414" fill-rule="nonzero" points="392.07,882.29 784.13,650.54 392.07,472.33 "/>
+        <polygon fill="#393939" fill-rule="nonzero" points="0,650.54 392.07,882.29 392.07,472.33 "/>
+       </g>
+      </g>
+     </g>
+    </svg>`,
+    name: "Ehereum",
     pos: "Fixed",
     rate: 21.7,
   },
   {
-    icon: tellor,
-    name: "Tellor",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.36 200"><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M203,26.16l-28.46,14.5-137.43,70a82.49,82.49,0,0,1-.7-10.69A81.87,81.87,0,0,1,158.2,28.6l16.29-8.3,2.43-1.24A100,100,0,0,0,18.18,100q0,3.82.29,7.61a18.19,18.19,0,0,1-9.88,17.58L0,129.57V150l25.29-12.89,0,0,8.19-4.18,8.07-4.11v0L186.43,55l16.28-8.29,33.65-17.15V9.14Z"/><path d="M236.36,50,49.78,145,33.5,153.31,0,170.38v20.41l33.27-16.95,28.46-14.5L199.3,89.24A83.45,83.45,0,0,1,200,100,81.87,81.87,0,0,1,78.09,171.36l-1,.53-17.66,9A100,100,0,0,0,218.18,100c0-2.57-.1-5.14-.29-7.68a18.2,18.2,0,0,1,9.87-17.58l8.6-4.38Z"/></g></g></svg>`,
+    name: "Stella",
     pos: "Flexible",
     rate: 5.5,
   },
   {
-    icon: polkadot,
+    icon: `<svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 1326.1 1410.3" style="enable-background:new 0 0 1326.1 1410.3;" xml:space="preserve">
+ <style type="text/css">
+   .st0{fill:#E6007A;}
+ </style>
+ <ellipse class="st0" cx="663" cy="147.9" rx="254.3" ry="147.9"/>
+ <ellipse class="st0" cx="663" cy="1262.3" rx="254.3" ry="147.9"/>
+ <ellipse transform="matrix(0.5 -0.866 0.866 0.5 -279.1512 369.5916)" class="st0" cx="180.5" cy="426.5" rx="254.3" ry="148"/>
+ <ellipse transform="matrix(0.5 -0.866 0.866 0.5 -279.1552 1483.9517)" class="st0" cx="1145.6" cy="983.7" rx="254.3" ry="147.9"/>
+ <ellipse transform="matrix(0.866 -0.5 0.5 0.866 -467.6798 222.044)" class="st0" cx="180.5" cy="983.7" rx="148" ry="254.3"/>
+ <ellipse transform="matrix(0.866 -0.5 0.5 0.866 -59.8007 629.9254)" class="st0" cx="1145.6" cy="426.6" rx="147.9" ry="254.3"/>
+ </svg>`,
     name: "Polkadot",
     pos: "Fixed",
     rate: 10.19,
   },
   {
-    icon: ethereum,
-    name: "Ethereum",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1598"><g fill="#f70000"><path d="M995 563L0 1588 1000 0l1000 1598z"/><path d="M1140 971H828l160-172 152 173m-600 281h896l-182-182-538 2v1l-176 176"/></g></svg>`,
+    name: "Ark",
     pos: "Flexible",
     rate: 59.7,
   },
   {
-    icon: usdCoin,
-    name: "Usdcoin",
+    icon: `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113 113.4"><title>algorand-algo-logo</title><polygon points="19.6 113.4 36 85 52.4 56.7 68.7 28.3 71.4 23.8 72.6 28.3 77.6 47 72 56.7 55.6 85 39.3 113.4 58.9 113.4 75.3 85 83.8 70.3 87.8 85 95.4 113.4 113 113.4 105.4 85 97.8 56.7 95.8 49.4 108 28.3 90.2 28.3 89.6 26.2 83.4 3 82.6 0 65.5 0 65.1 0.6 49.1 28.3 32.7 56.7 16.4 85 0 113.4 19.6 113.4"/></svg>`,
+    name: "Alogorand",
     pos: "Flexible",
     rate: 3.2,
   },

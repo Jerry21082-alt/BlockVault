@@ -21,7 +21,7 @@ export default function SideBar() {
 
   return (
     <div
-      className={`side-bar w-[60%] md:w-[20vw] h-screen z-10 overflow-y-auto fixed top-0 left-0 hidden md:block ${lightMode ? "bg-snow" : "bg-secondarySemiDark"}`}
+      className={`side-bar w-[60%] md:w-[20vw] h-screen z-50 overflow-y-auto fixed top-0 left-0 hidden md:block ${lightMode ? "bg-snow" : "bg-secondarySemiDark"}`}
     >
       <div
         className={`flex items-start flex-col px-4 space-y-10 mt-20 ${

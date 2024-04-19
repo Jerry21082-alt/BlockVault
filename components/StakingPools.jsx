@@ -25,7 +25,6 @@ export default function StakingPools() {
     setPoolsItems(updatedCoin);
   };
 
-
   const filterSub = (array, func) => {
     const newArray = [];
 
@@ -101,7 +100,7 @@ export default function StakingPools() {
           </tr>
         </thead>
         <tbody>
-          {stakingPool.map((pool, i) => (
+          {poolItems.map((pool, i) => (
             <tr
               key={i}
               className={`${
@@ -151,31 +150,48 @@ export default function StakingPools() {
                 <div className="flex items-center justify-between w-full">
                   <button
                     type="button"
-                    className={`flex items-center justify-end bg-${
-                      lightMode ? "darkSnow" : "secondaryLight"
-                    } rounded-3xl w-[40px] h-[25px] p-1`}
+                    className={`flex items-center justify-end rounded-3xl w-[40px] h-[25px] p-1 ${
+                      pool.isSub === true
+                        ? lightMode
+                          ? "bg-darkSnow"
+                          : "bg-secondaryLight"
+                        : lightMode
+                        ? "bg-darkSnow"
+                        : "bg-secondaryDark"
+                    }`}
+                    // style={{backgroundColor: lightMode ? '#F5F5F5' : '#1f183e'}}
                   >
                     <div
                       onClick={() => updatePoolSubcription(i)}
-                      className={`rounded-full w-[20px] h-[20px] bg-primaryColor cursor-pointer ${
-                        pool.isSub === true ? "toggle-sub" : "untoggle-sub"
-                      }`}
+                      className={`rounded-full w-[20px] h-[20px] cursor-pointer ${
+                        pool.isSub === true
+                          ? lightMode
+                            ? "bg-primaryColor"
+                            : "bg-primaryColor"
+                          : lightMode
+                          ? "bg-snow"
+                          : "bg-secondaryLight"
+                      } ${pool.isSub ? "untoggle-sub" : "toggle-sub"}`}
                     />
                   </button>
 
-                  <button
-                    className={`max-w-32 border-2 ${
-                      lightMode
-                        ? "border border-grayColor"
-                        : "border border-darkSnow"
-                    } outline-none rounded-3xl py-1 px-4 text-primaryColor`}
+                  <div
+                    className={`w-28 flex justify-center outline-none rounded-3xl py-2 px-4 ${
+                      pool.isSub === true
+                        ? lightMode
+                          ? "bg-primaryColor text-snow border-0"
+                          : "bg-primaryColor text-darkSnow border-0"
+                        : lightMode
+                        ? "bg-snow border-2 border-darkSnow text-grayColor"
+                        : "bg-secondaryLight border border-darkSnow text-darkSnow"
+                    }`}
                   >
                     <span
-                      className={lightMode ? "text-grayColor" : "text-darkSnow"}
+                      // className={lightMode ? "text-grayColor" : "text-darkSnow"}
                     >
-                      Subscribe
+                      {pool.isSub === true ? "Subscribed" : "Ended"}
                     </span>
-                  </button>
+                  </div>
                 </div>
               </td>
             </tr>

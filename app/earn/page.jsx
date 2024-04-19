@@ -36,30 +36,34 @@ export default function EarnPage() {
   const StakingPoolsCard = ({ icon, name, percentage, pos }) => (
     <div
       className={`p-4 ${
-        lightMode ? "bg-gradient-to-tr from-dark via-skyBlue to-grayColor" : "bg-snow"
-      } rounded-lg w-full`}
+        lightMode
+          ? "bg-gradient-to-tr from-dark via-skyBlue to-grayColor"
+          : "bg-snow"
+      } rounded-lg h-44 w-48 md:w-auto`}
     >
-      <div className="flex items-center gap-3">
-        <div className="flex justify-center items-center w-[40px]">
-          <Image src={icon} alt="currency photo" />
+      <div className="flex items-center space-x-2 stake">
+        <div className="w-10 h-10">
+          <div dangerouslySetInnerHTML={{ __html: icon }} />
         </div>
-        <span className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
+        <h4 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
           {name}
-        </span>
+        </h4>
       </div>
-      <div className="flex justify-between items-center mt-5 w-[160px]">
-        <h3 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>{pos}</h3>
-        <span className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
+      <div className="flex justify-between items-center mt-8 w-full">
+        <h4 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
+          {pos}
+        </h4>
+        <h4 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
           %{percentage}
-        </span>
+        </h4>
       </div>
       <div className="flex justify-between items-center mt-2">
-        <h4 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
+        <p className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
           Duration
-        </h4>
-        <h4 className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
+        </p>
+        <p className={`text-${lightMode ? "snow" : "secondaryDark"}`}>
           Est.APR
-        </h4>
+        </p>
       </div>
     </div>
   );
@@ -68,10 +72,10 @@ export default function EarnPage() {
     <Layout>
       <div
         onClick={() => setToggleBar(false)}
-        className={`w-full bg-${lightMode ? 'darkSnow' : 'secondaryDark'}`}
+        className={`w-full bg-${lightMode ? "darkSnow" : "secondaryDark"}`}
       >
         <div className="flex justify-between items-center ">
-          <h1 className={`font-bold text-${lightMode ? 'dark' : 'snow'} mt-4`}>
+          <h1 className={`font-bold text-${lightMode ? "dark" : "snow"} mt-4`}>
             Popular Staking Pools
           </h1>
 
@@ -100,7 +104,7 @@ export default function EarnPage() {
 
         <div className="media-scroller snaps w-full p-4 mt-5 md:hidden">
           {earnCard.map((card, idx) => (
-            <div key={idx} className="w-full">
+            <div key={idx}>
               <StakingPoolsCard
                 icon={card.icon}
                 name={card.name}
@@ -110,9 +114,9 @@ export default function EarnPage() {
             </div>
           ))}
         </div>
-        <div className="hidden md:flex items-centet gap-[24px] mt-5">
+        <div className="hidden md:flex items-centet space-x-4 mt-5">
           {earnCard.slice(start, stop).map((card, idx) => (
-            <div key={idx} className="w-[250px]">
+            <div key={idx} className="w-full">
               <StakingPoolsCard
                 icon={card.icon}
                 name={card.name}
