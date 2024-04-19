@@ -50,7 +50,7 @@ export default function Market() {
             >
               <td className="p-4">
                 <div className="flex items-center space-x-2">
-                  <div className="w-6 md:w-8 h-6 md:h-8 flex items-center justify-center my-1">
+                  <div className="w-8 h-8 flex items-center justify-center my-1">
                     <div dangerouslySetInnerHTML={{ __html: data.icon }} />
                   </div>
 

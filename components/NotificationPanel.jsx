@@ -33,7 +33,7 @@ export default function NotificationPanel() {
   return (
     <div
       ref={notRef}
-      className={`w-[90vw] md:w-[30vw] h-20 fixed top-[9%] right-2 p-2 bg-primaryColor rounded-xl z-40 ${
+      className={`w-[90vw] md:w-[30vw] h-20 fixed top-[10%] right-2 p-2 bg-primaryColor rounded-xl z-40 ${
         toggleNotification ? "open-notification" : "close-notification"
       }`}
     >

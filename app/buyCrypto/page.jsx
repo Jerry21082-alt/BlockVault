@@ -132,7 +132,7 @@ export default function BuyCrypto() {
                 <tr key={i}>
                   <td>
                     <div className="flex items-center my-2">
-                      <div className="w-6 md:w-8 h-6 md:h-6 my-2">
+                      <div className="w-8 h-8 my-2">
                         <div
                           dangerouslySetInnerHTML={{ __html: partner.currency }}
                         />

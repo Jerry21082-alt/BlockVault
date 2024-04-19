@@ -26,7 +26,7 @@ export default function Nav() {
     <div
       className={`nav fixed top-0 w-screen bg-${
         lightMode ? "snow" : "secondaryDark"
-      } flex justify-between items-center py-2 px-4 z-50 shadow-md h-14`}
+      } flex justify-between items-center py-2 px-4 z-[100] shadow-md h-14`}
     >
       <div className="flex items-center space-x-10 lg:space-x-28">
         <div className="flex items-center space-x-5">

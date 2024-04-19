@@ -12,11 +12,11 @@ import {
 import { generateStockCandles } from "@/helpers/generateStockCandles";
 
 export default function DisplayChart({ stockDetails }) {
-  const stockData = generateStockCandles(120);
-  const data_1 = stockData.slice(0, 30);
-  const data_2 = stockData.slice(0, 60);
-  const data_3 = stockData.slice(0, 90);
-  const data_4 = stockData.slice(0, 120);
+  const stockData = generateStockCandles(90);
+  const data_1 = stockData.slice(0, 20);
+  const data_2 = stockData.slice(0, 40);
+  const data_3 = stockData.slice(0, 60);
+  const data_4 = stockData.slice(0, 90);
 
   const filterButtonsValue = [
     {
@@ -173,8 +173,8 @@ export default function DisplayChart({ stockDetails }) {
           </button>
         </div>
       </div>
-      <div className="h-full mt-14">
-        <ResponsiveContainer height={300}>
+      <div className="relative mt-8 md:mt-0 md:absolute bottom-0 right-0 left-0">
+        <ResponsiveContainer height={400}>
           <AreaChart data={formatData()}>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
