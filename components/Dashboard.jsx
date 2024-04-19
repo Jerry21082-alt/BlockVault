@@ -48,7 +48,7 @@ export default function Dashboard() {
       <div
         className={`dashboard mr-0 md:mr-4 md:mt-0 bg-${
           lightMode ? "snow" : "secondarySemiDark"
-        } rounded-lg p-4 w-full h-[70vh] md:w-[30%] md:block`}
+        } rounded-lg p-4 w-full md:w-[30%] md:block`}
       >
         <div
           className={`w-full border-b border-solid border-${
