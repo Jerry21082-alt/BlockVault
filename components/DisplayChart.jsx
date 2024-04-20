@@ -174,7 +174,7 @@ export default function DisplayChart({ stockDetails }) {
         </div>
       </div>
       <div className="relative mt-8 md:mt-0 md:absolute bottom-0 right-0 left-0">
-        <ResponsiveContainer height={400}>
+        <ResponsiveContainer height={300}>
           <AreaChart data={formatData()}>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop

@@ -19,7 +19,7 @@ export default function SearchResults() {
 
   return (
     <div
-      className={`w-[300px] h-[300px] p-2 rounded-lg search-result text-snow fixed top-14 left-0 lg:left-44 xl:left-56 z-[100] overflow-y-auto ${
+      className={`w-[300px] h-[300px] hidden md:block p-2 rounded-lg search-result text-snow fixed top-14 left-0 lg:left-44 xl:left-56 z-[100] overflow-y-auto ${
         searchInput.length ? "open-search-result" : "close-search-result"
       }`}
     >

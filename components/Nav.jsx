@@ -18,6 +18,7 @@ export default function Nav() {
     updateBestMatches,
     setToggleNotification,
     lightMode,
+    setOpenMobileSearch,
   } = contextFunc();
 
   const pathname = usePathname();
@@ -32,15 +33,13 @@ export default function Nav() {
         <div className="flex items-center space-x-5">
           <div
             onClick={() => setToggleBar((prev) => !prev)}
-            className={`bar ${toggleBar ? 'bar-open' : 'bar-closed'} bg-grayColor rounded-md p-1 h-6 flex flex-col space-y-1 items-center justify-center`}  
+            className={`bar ${
+              toggleBar ? "bar-open" : "bar-closed"
+            } bg-grayColor rounded-md p-1 h-6 flex flex-col space-y-1 items-center justify-center`}
           >
-            <div
-              style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }}
-            />
+            <div style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }} />
 
-            <div
-              style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }}
-            />
+            <div style={{ backgroundColor: lightMode ? "#1f183e" : "#fff" }} />
           </div>
 
           <div
@@ -91,6 +90,23 @@ export default function Nav() {
       </div>
 
       <div className="flex items-center justify-center space-x-3">
+        <div
+          className="w-5 h-5 block md:hidden"
+          onClick={() => setOpenMobileSearch(true)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="-5.0 -10.0 110.0 135.0"
+            fill="#8b86a1"
+          >
+            <g>
+              <path d="m43.75 5.207c-21.25 0-38.543 17.293-38.543 38.543s17.293 38.543 38.543 38.543 38.543-17.293 38.543-38.543-17.293-38.543-38.543-38.543z" />
+              <path d="m91.668 94.793c-0.79297 0-1.582-0.29297-2.207-0.91797l-20.832-20.832c-1.207-1.207-1.207-3.207 0-4.418 1.207-1.207 3.207-1.207 4.418 0l20.832 20.832c1.207 1.207 1.207 3.207 0 4.418-0.625 0.625-1.418 0.91797-2.207 0.91797z" />
+            </g>
+          </svg>
+        </div>
+
         <IoIosNotifications
           onClick={() => setToggleNotification((prev) => !prev)}
           color="#8b86a1"

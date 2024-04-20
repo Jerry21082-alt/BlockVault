@@ -305,3 +305,35 @@ thead tr {
 .mobile-sidebar.dark ul svg {
   fill: #e9eedf;
 }
+
+.open-mobile-search_nav {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.1s ease-in-out, visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.close-mobile-search_nav {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, -100%, 0);
+  transition: opacity 0.1s ease-in-out, visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.open-mobile-search {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.1s ease-in-out, visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.close-mobile-search {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.1s ease-in-out, visibility 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}

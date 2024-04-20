@@ -23,6 +23,7 @@ export default function StateContext({ children }) {
   const [stockSymbol, setStockSymbol] = useState("IBM");
   const [bestMatches, setBestMatches] = useState(mockDataQuery);
   const [showSearch, setShowSearch] = useState(false)
+  const [openMobileSearch, setOpenMobileSearch] = useState(false);
 
   const updateBestMatches = async () => {
     try {
@@ -83,7 +84,9 @@ export default function StateContext({ children }) {
         isLoading,
         setIsLoading,
         showSearch,
-        setShowSearch
+        setShowSearch,
+        openMobileSearch,
+        setOpenMobileSearch
       }}
     >
       {children}

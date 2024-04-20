@@ -6,6 +6,8 @@ import SearchResults from "./SearchResults";
 import NotificationPanel from "./NotificationPanel";
 import Spinner from "./Spinner";
 import MobileSideBar from "./MobileSideBar";
+import MobileSearch from "./MobileSearch";
+import MobileSearchNav from "./MobileSearchNav";
 
 export default function Layout({ children }) {
   const { isLoading, lightMode } = contextFunc();
@@ -17,6 +19,8 @@ export default function Layout({ children }) {
       <div className="w-[20%]">
         <SideBar />
         <MobileSideBar />
+        <MobileSearchNav />
+        <MobileSearch />
       </div>
       <div
         className={`absolute right-0 w-full ${

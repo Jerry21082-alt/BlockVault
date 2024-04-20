@@ -1,16 +1,3 @@
-import {
-  bitcoin,
-  ethereum,
-  tellor,
-  tether,
-  bnb,
-  usdCoin,
-  xrp,
-  litecoin,
-  polkadot,
-  dash,
-  avalanche,
-} from "@/public/crypto-assets";
 
 import { img1, img2, img3 } from "@/public/images";
 
