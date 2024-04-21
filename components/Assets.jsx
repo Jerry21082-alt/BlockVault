@@ -26,101 +26,107 @@ export default function Assets() {
   );
 
   return (
-    <div
-      className={`${lightMode ? "bg-snow" : "bg-secondarySemiDark"} rounded-md`}
-    >
+    <section className="w-full md:w-1/4">
       <div
-        className={`w-full border-b ${
-          lightMode ? "border-darkSnow" : "border-secondaryLight"
-        }`}
+        className={`${
+          lightMode ? "bg-snow" : "bg-secondarySemiDark"
+        } rounded-md w-full`}
       >
-        <div className="flex items-center justify-center p-4">
+        <div
+          className={`w-full border-b ${
+            lightMode ? "border-darkSnow" : "border-secondaryLight"
+          }`}
+        >
+          <div className="flex items-center justify-center p-4">
+            <button
+              onClick={() => setToggleMarket("Sell")}
+              className={`${
+                toggleMarket === "Sell"
+                  ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
+                  : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
+              } w-[120px] text-snow text-sm py-2 px-4 rounded-l-3xl`}
+            >
+              {`Sell`}
+            </button>
+            <button
+              onClick={() => setToggleMarket("Buy")}
+              className={`${
+                toggleMarket === "Buy"
+                  ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
+                  : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
+              } w-[120px] text-snow text-sm py-2 px-4 rounded-r-3xl`}
+            >
+              {`Buy`}
+            </button>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center mt-5">
           <button
-            onClick={() => setToggleMarket("Sell")}
+            onClick={() => setTogglePurchase("Limit")}
             className={`${
-              toggleMarket === "Sell"
+              togglePurchase === "Limit"
                 ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
                 : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
-            } w-[120px] text-snow text-sm py-2 px-4 rounded-l-3xl`}
+            } w-[80px] text-snow text-sm py-1 px-4 rounded-l-3xl`}
           >
-            {`Sell`}
+            Limit
           </button>
+
           <button
-            onClick={() => setToggleMarket("Buy")}
+            onClick={() => setTogglePurchase("Market")}
             className={`${
-              toggleMarket === "Buy"
+              togglePurchase === "Market"
                 ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
                 : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
-            } w-[120px] text-snow text-sm py-2 px-4 rounded-r-3xl`}
+            } w-[80px] text-snow text-sm py-1 px-4`}
           >
-            {`Buy`}
+            Market
+          </button>
+
+          <button
+            onClick={() => setTogglePurchase("Stop")}
+            className={`${
+              togglePurchase === "Stop"
+                ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
+                : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
+            } w-[80px] text-snow text-sm py-1 px-4 rounded-r-3xl`}
+          >
+            Stop
+          </button>
+        </div>
+
+        <div className="p-4">
+          <Select
+            tag={`Price(TUSD)`}
+            amount={`30,690.04`}
+            icon={<BsChevronDown color={`${lightMode ? "#000" : "#fff"}`} />}
+          />
+          <Select
+            tag={`Amount(BTC)`}
+            amount={`0.00434`}
+            icon={<BsChevronDown color={`${lightMode ? "#000" : "#fff"}`} />}
+          />
+          <Select tag={`Total`} amount={`18.5949`} />
+        </div>
+
+        <div className="flex justify-between items-center p-4">
+          <div className="flex flex-col">
+            <span className="text-grayColor text-sm">Max Buy BTC</span>
+            <span className="text-grayColor">0.000000</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-grayColor text-sm">Max Buy BTC</span>
+            <span className="text-grayColor">0.0</span>
+          </div>
+        </div>
+
+        <div className="p-4">
+          <button className="flex justify-center items-center gap-2 bg-primaryColor text-snow py-2 px-4 rounded-3xl w-full outline-none border-none">
+            Buy ETH <BiSolidCart />
           </button>
         </div>
       </div>
-
-      <div className="flex justify-center items-center mt-5">
-        <button
-          onClick={() => setTogglePurchase("Limit")}
-          className={`${
-            togglePurchase === "Limit"
-              ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
-              : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
-          } w-[80px] text-snow text-sm py-1 px-4 rounded-l-3xl`}
-        >
-          Limit
-        </button>
-
-        <button
-          onClick={() => setTogglePurchase("Market")}
-          className={`${
-            togglePurchase === "Market"
-              ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
-              : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
-          } w-[80px] text-snow text-sm py-1 px-4`}
-        >
-          Market
-        </button>
-
-        <button
-          onClick={() => setTogglePurchase("Stop")}
-          className={`${
-            togglePurchase === "Stop"
-              ? `${lightMode ? "bg-secondaryLight" : "bg-primaryColor"}`
-              : `${lightMode ? "bg-grayColor" : "bg-grayColor"}`
-          } w-[80px] text-snow text-sm py-1 px-4 rounded-r-3xl`}
-        >
-          Stop
-        </button>
-      </div>
-
-      <div className="p-4">
-        <Select
-          tag={`Price(TUSD)`}
-          amount={`30,690.04`}
-          icon={<BsChevronDown color={`${lightMode ? "#000" : "#fff"}`} />}
-        />
-        <Select
-          tag={`Amount(BTC)`}
-          amount={`0.00434`}
-          icon={<BsChevronDown color={`${lightMode ? "#000" : "#fff"}`} />}
-        />
-        <Select tag={`Total`} amount={`18.5949`} />
-      </div>
-
-      <div className="flex justify-between items-center p-4">
-        <div className="flex flex-col">
-          <span className="text-grayColor text-sm">Max Buy BTC</span>
-          <span className="text-grayColor">0.000000</span>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-grayColor text-sm">Max Buy BTC</span>
-          <span className="text-grayColor">0.0</span>
-        </div>
-      </div>
-
-      <div className="p-4">
-        <button className="flex justify-center items-center gap-2 bg-primaryColor text-snow py-2 px-4 rounded-3xl w-full outline-none border-none">Buy ETH <BiSolidCart /></button>
-      </div>
-    </div>
+    </section>
   );
 }
