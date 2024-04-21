@@ -21,11 +21,16 @@ export default function page() {
 
   return (
     <Layout>
-      <section className="w-full min-h-screen flex flex-col md:flex-row items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-        <div className="h-full w-full md:w-3/4 bg-secondarySemiDark rounded-md p-4">
+      <section className="w-full h-full md:h-[90vh] flex flex-col md:flex-row items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+        <div
+          className={`h-full w-full md:w-3/4 rounded-md p-4`}
+          style={{ backgroundColor: lightMode ? "#F5F5F5" : "#251c4c" }}
+        >
           <div className="flex items-center justify-between space-x-2 w-full">
-            <h1 className="text-darkSnow">{`${data[0].coin_1}/${data[0].coin_2}`}</h1>
-            <div className="flex items-center justify-between space-x-8 hidden">
+            <h1
+              className={lightMode ? "text-grayColor" : "text-darkSnow"}
+            >{`${data[0].coin_1}/${data[0].coin_2}`}</h1>
+            <div className="hidden items-center justify-between space-x-8 md:flex">
               <div className="flex flex-col space-y-1">
                 <span
                   className={lightMode ? "text-grayColor" : "text-grayColor"}
@@ -72,7 +77,7 @@ export default function page() {
           <ExchangeChart />
         </div>
 
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 w-full md:w-1/4">
+        <div className="flex flex-col space-y-4 w-full md:w-1/4 h-full">
           <Assets />
           <div
             className={`${
@@ -124,12 +129,12 @@ export default function page() {
             </div>
 
             <div className="flex items-center space-x-2 p-4 w-full">
-              <button className="w-32 border-2 border-primaryColor outline-none rounded-3xl py-1 px-4 text-primaryColor active:bg-primaryColor active:text-darkSnow active:scale-95">
+              <button className="w-32 md:w-auto border-2 border-primaryColor outline-none rounded-3xl py-1 px-4 text-primaryColor active:bg-primaryColor active:text-darkSnow active:scale-95 md:hover:bg-primaryColor md:hover:text-darkSnow">
                 Deposit
               </button>
 
               <button
-                className={`border-2 w-32 active:bg-secondaryLight active:text-darkSnow active:scale-95 ${
+                className={`border-2 w-32 md:w-auto active:bg-secondaryLight active:text-darkSnow active:scale-95 md:hover:bg-secondaryLight md:hover:text-darkSnow ${
                   lightMode ? "border-secondaryLight" : "border-snow"
                 } outline-none rounded-3xl py-1 px-4 ${
                   lightMode ? "text-dark" : "text-snow"

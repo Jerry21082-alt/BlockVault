@@ -13,7 +13,7 @@ export default function Assets() {
   const Select = ({ tag, amount, icon }) => (
     <div
       className={`${
-        lightMode ? "bg-darkSnow" : "bg-secondaryDark"
+        lightMode ? "bg-snow" : "bg-secondaryDark"
       } flex justify-between items-center mt-5 p-2 rounded-md`}
     >
       <span className="text-grayColor text-sm">{tag}</span>

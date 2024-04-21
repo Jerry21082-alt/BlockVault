@@ -7,7 +7,8 @@ export default function MobileSearchNav() {
     setOpenMobileSearch,
     searchInput,
     setSearchInput,
-    updateBestMatches
+    updateBestMatches,
+    lightMode
   } = contextFunc();
 
   return (
@@ -17,17 +18,17 @@ export default function MobileSearchNav() {
       } fixed flex md:hidden items-center right-0 left-0 h-14 w-screen z-[400] bg-secondaryDark p-2`}
     >
       <div className="flex items-center space-x-3 justify-between w-full">
-        <div className="flex items-center w-full space-x-2 rounded-3xl border-2 border-grayColor py-2 h-8 overflow-hidden pl-2">
+        <div className={`border rounded-3xl flex items-center overflow-hidden pr-1 ${lightMode ? 'border-grayColor' : 'border-darkSnow'}`}>
           <input
             type=""
             placeholder="Search"
             value={searchInput}
             onChange={(ev) => setSearchInput(ev.target.value)}
-            className="bg-secondaryDark outline-none p-2 text-snow"
+            className="bg-secondaryDark outline-none p-2 text-snow rounded-l-3xl w-2/3"
           />
 
           <button
-            className="w-24 h-8 text-snow bg-primaryColor"
+            className="w-24 py-1 px-4 text-snow bg-primaryColor rounded-3xl"
             onClick={updateBestMatches}
           >
             Search

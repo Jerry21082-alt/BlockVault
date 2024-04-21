@@ -8,10 +8,10 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default function ExchangeChart() {
   return (
-    <div className="mt-20">
+    <div className="mt-5 md:mt-20">
       <Chart
         type="candlestick"
-        height='400px'
+        height='400'
         width="100%"
         options={data.options}
         series={data.series}

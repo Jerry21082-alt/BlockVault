@@ -129,7 +129,7 @@ export default function BuyCrypto() {
 
             <tbody>
               {paymentPartner.map((partner, i) => (
-                <tr key={i}>
+                <tr key={i} className={lightMode ? 'table-light' : 'table-dark'}>
                   <td>
                     <div className="flex items-center my-2">
                       <div className="w-8 h-8 my-2">
