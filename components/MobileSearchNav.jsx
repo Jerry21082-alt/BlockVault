@@ -27,7 +27,7 @@ export default function MobileSearchNav() {
           />
 
           <button
-            className="w-full h-8 text-snow bg-primaryColor"
+            className="w-24 h-8 text-snow bg-primaryColor"
             onClick={updateBestMatches}
           >
             Search

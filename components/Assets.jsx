@@ -18,7 +18,7 @@ export default function Assets() {
     >
       <span className="text-grayColor text-sm">{tag}</span>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center space-x-2">
         <span className="text-grayColor text-sm">{amount}</span>
         {icon}
       </div>
@@ -26,7 +26,7 @@ export default function Assets() {
   );
 
   return (
-    <section className="w-full md:w-1/4">
+    <section className="w-full">
       <div
         className={`${
           lightMode ? "bg-snow" : "bg-secondarySemiDark"

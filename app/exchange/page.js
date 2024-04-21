@@ -72,7 +72,74 @@ export default function page() {
           <ExchangeChart />
         </div>
 
-        <Assets />
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 w-full md:w-1/4">
+          <Assets />
+          <div
+            className={`${
+              lightMode ? "bg-snow" : "bg-secondarySemiDark"
+            } rounded-md w-full`}
+          >
+            <h3
+              className={`p-4 ${
+                lightMode ? "text-grayColor" : "text-darkSnow"
+              }`}
+            >
+              Assets
+            </h3>
+
+            <div
+              className={`w-full border-t p-4 space-y-2 ${
+                lightMode ? "border-darkSnow" : "border-secondaryLight"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className={
+                    lightMode ? "text-grayColor" : "text-secondaryLight"
+                  }
+                >{`${data[0].coin_1} Balance:`}</span>
+                <span
+                  className={
+                    lightMode ? "text-grayColor" : "text-secondaryLight"
+                  }
+                >
+                  -
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span
+                  className={
+                    lightMode ? "text-grayColor" : "text-secondaryLight"
+                  }
+                >{`${data[0].coin_2} Balance:`}</span>
+                <span
+                  className={
+                    lightMode ? "text-grayColor" : "text-secondaryLight"
+                  }
+                >
+                  -
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2 p-4 w-full">
+              <button className="w-32 border-2 border-primaryColor outline-none rounded-3xl py-1 px-4 text-primaryColor active:bg-primaryColor active:text-darkSnow active:scale-95">
+                Deposit
+              </button>
+
+              <button
+                className={`border-2 w-32 active:bg-secondaryLight active:text-darkSnow active:scale-95 ${
+                  lightMode ? "border-secondaryLight" : "border-snow"
+                } outline-none rounded-3xl py-1 px-4 ${
+                  lightMode ? "text-dark" : "text-snow"
+                }`}
+              >
+                Buy Crypto
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   );
