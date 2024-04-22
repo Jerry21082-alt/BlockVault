@@ -45,7 +45,7 @@ export default function Nav() {
           <div
             className={`logo text-lg ${lightMode ? "text-dark" : "text-snow"}`}
           >
-            <Link href="/">
+            <Link href="/market">
               <h2>CryptoVerse</h2>
             </Link>
           </div>

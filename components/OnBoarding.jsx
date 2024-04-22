@@ -25,7 +25,7 @@ export default function OnBoarding() {
   return (
     <div
       className={`w-screen h-screen fixed top-0 flex flex-col md:flex-row justify-center items-center z-[20] ${
-        offBoard ? "hidden" : ""
+        offBoard ? "hidden" : null
       }`}
     >
       <div className="p-4 h-screen w-screen md:w-[50vw] bg-secondarySemiDark">
@@ -49,13 +49,21 @@ export default function OnBoarding() {
           <div className="absolute bottom-[2rem] left-0 flex justify-between items-center w-screen px-5">
             <button
               onClick={() => handlePrevButton(count > 0 ? count - 1 : 0)}
-              className={` bg-${
-                count > 0 ? "primaryColor" : null
-              } border-snow border-2 border-solid rounded-2xl py-1 px-4 outline-none text-${
-                count > 0 ? "snow" : "grayColor"
-              } flex justify-center items-center gap-1 w-[100px]`}
+              className={`${
+                count < 0 ? "bg-primaryColor" : null
+              } border-snow border-2 border-solid rounded-3xl py-1 px-4 outline-none ${
+                count < 0 ? "text-darkSnow" : "text-grayColor"
+              } flex justify-center items-center space-x-2 w-24 active:scale-95 active:bg-primaryColor`}
             >
-              <BsChevronLeft color="#fff" />
+              <div className="w-3 h-3">
+                <svg
+                  className="w-full h-full"
+                  fill="#e9eedf"
+                  viewBox="0 0 46.001 85.999"
+                >
+                  <path d="M44.998,80.094c1.338,1.352,1.338,3.541,0,4.893c-1.336,1.35-3.506,1.352-4.844,0L1.003,45.447  c-1.338-1.352-1.338-3.543,0-4.895l39.15-39.539c1.338-1.352,3.506-1.352,4.844,0S46.335,4.555,45,5.906L9.294,43L44.998,80.094z" />
+                </svg>
+              </div>
               <span>Back</span>
             </button>
 
@@ -63,8 +71,8 @@ export default function OnBoarding() {
               <div className="flex justify-center items-center gap-2">
                 {count < onBoardingContent.length - 1 && (
                   <button
-                    onClick={() => router.push("/home")}
-                    className="border-primaryColor border-2 border-solid rounded-2xl py-1 px-4 outline-none text-grayColor text-primaryColor w-[90px]"
+                    onClick={() => router.push("/market")}
+                    className="border-primaryColor border-2 rounded-3xl py-1 px-4 outline-none text-primaryColor w-24"
                   >
                     Skip
                   </button>
@@ -78,16 +86,27 @@ export default function OnBoarding() {
                         : onBoardingContent.length - 1
                     )
                   }
-                  className="bg-primaryColor rounded-2xl py-1 px-4 outline-none text-grayColor flex justify-center items-center gap-1 w-[90px] text-snow"
+                  className="bg-primaryColor rounded-3xl py-1 px-4 outline-none flex justify-center items-center space-x-2 w-24 text-darkSnow"
                 >
                   <span>Next</span>
 
-                  <BsChevronRight color="#fff" />
+                  <div className="w-3 h-3">
+                    <svg
+                    className="w-full h-full"
+                      height="85.999px"
+                      viewBox="0 0 46.001 85.999"
+                      width="46.001px"
+                      fill="#e9eedf"
+                    >
+                      <path d="M1.003,80.094c-1.338,1.352-1.338,3.541,0,4.893c1.337,1.35,3.506,1.352,4.845,0l39.149-39.539  c1.338-1.352,1.338-3.543,0-4.895L5.848,1.014c-1.339-1.352-3.506-1.352-4.845,0c-1.338,1.352-1.338,3.541-0.001,4.893L36.706,43  L1.003,80.094z" />
+                    </svg>
+                  </div>
                 </button>
               </div>
             ) : (
-              <Link href={`/home`} 
-                className="bg-primaryColor rounded-2xl py-1 px-4 outline-none text-grayColor flex justify-center items-center gap-1 w-[130px] text-snow"
+              <Link
+                href={`/market`}
+                className="bg-primaryColor rounded-2xl py-1 px-4 outline-none flex justify-center items-center gap-1 w-[130px] text-snow"
               >
                 <span>Continue</span>
 

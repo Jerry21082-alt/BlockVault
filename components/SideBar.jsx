@@ -31,7 +31,7 @@ export default function SideBar() {
         <Link
           onClick={() => setToggleBar(false)}
           href="/"
-          className={pathname == "/" ? activeLink : inactiveLink}
+          className={pathname == "/market" ? activeLink : inactiveLink}
         >
           <AiFillHome color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
           <h4 className={activeLink && lightMode ? "dark" : "text-darkSnow"}>
