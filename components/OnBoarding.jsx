@@ -24,15 +24,15 @@ export default function OnBoarding() {
 
   return (
     <div
-      className={`w-screen h-screen fixed top-0 flex flex-col md:flex-row justify-center items-center z-[20] ${
+      className={`w-screen h-full flex flex-col md:flex-row justify-center items-center z-[20] ${
         offBoard ? "hidden" : null
       }`}
     >
       <div className="p-4 h-screen w-screen md:w-[50vw] bg-secondarySemiDark">
-        <button className="bg-secondaryDark py-1 px-4 outline-none border-none flex gap-1 text-sm md:text-md rounded-2xl">
+        <div className="w-28 bg-secondaryDark py-1 px-4 outline-none border-none flex items-center justify-center space-x-1 text-sm md:text-md rounded-3xl">
           <span className="text-snow">Step {count + 1}</span>
           <span className="text-grayColor">of {onBoardingContent.length}</span>
-        </button>
+        </div>
 
         <div className="mt-[5rem] ml-5">
           <h2 className="text-snow text-[18px] font-[500]">
@@ -50,9 +50,9 @@ export default function OnBoarding() {
             <button
               onClick={() => handlePrevButton(count > 0 ? count - 1 : 0)}
               className={`${
-                count < 0 ? "bg-primaryColor" : null
+                count > 0 ? "bg-primaryColor" : null
               } border-snow border-2 border-solid rounded-3xl py-1 px-4 outline-none ${
-                count < 0 ? "text-darkSnow" : "text-grayColor"
+                count > 0 ? "text-darkSnow" : "text-grayColor"
               } flex justify-center items-center space-x-2 w-24 active:scale-95 active:bg-primaryColor`}
             >
               <div className="w-3 h-3">
@@ -68,7 +68,7 @@ export default function OnBoarding() {
             </button>
 
             {count < onBoardingContent.length - 1 ? (
-              <div className="flex justify-center items-center gap-2">
+              <div className="flex justify-center items-center space-x-2">
                 {count < onBoardingContent.length - 1 && (
                   <button
                     onClick={() => router.push("/market")}
@@ -92,7 +92,7 @@ export default function OnBoarding() {
 
                   <div className="w-3 h-3">
                     <svg
-                    className="w-full h-full"
+                      className="w-full h-full"
                       height="85.999px"
                       viewBox="0 0 46.001 85.999"
                       width="46.001px"
@@ -106,11 +106,23 @@ export default function OnBoarding() {
             ) : (
               <Link
                 href={`/market`}
-                className="bg-primaryColor rounded-2xl py-1 px-4 outline-none flex justify-center items-center gap-1 w-[130px] text-snow"
+                className="bg-primaryColor rounded-3xl py-1 px-4 outline-none flex justify-center items-center space-x-1 w-32 text-snow"
               >
                 <span>Continue</span>
 
-                <BsFillCheckCircleFill color="#fff" />
+                <div className="w-4 h-4">
+                  <svg
+                    className="w-full h-full"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="#fff"
+                      fill-rule="evenodd"
+                      d="M8,0 C12.4183,0 16,3.58172 16,8 C16,12.4183 12.4183,16 8,16 C3.58172,16 0,12.4183 0,8 C0,3.58172 3.58172,0 8,0 Z M8,2 C4.68629,2 2,4.68629 2,8 C2,11.3137 4.68629,14 8,14 C11.3137,14 14,11.3137 14,8 C14,4.68629 11.3137,2 8,2 Z M7,8.58579 L10.2929,5.29289 C10.6834,4.90237 11.3166,4.90237 11.7071,5.29289 C12.0675615,5.65337923 12.0952893,6.22060645 11.7902834,6.61290152 L11.7071,6.70711 L7.70711,10.7071 C7.34662077,11.0675615 6.77939355,11.0952893 6.38709848,10.7902834 L6.29289,10.7071 L4.29289,8.70711 C3.90237,8.31658 3.90237,7.68342 4.29289,7.29289 C4.65337923,6.93241 5.22060645,6.90468077 5.61290152,7.20970231 L5.70711,7.29289 L7,8.58579 L10.2929,5.29289 L7,8.58579 Z"
+                    />
+                  </svg>
+                </div>
               </Link>
             )}
           </div>
