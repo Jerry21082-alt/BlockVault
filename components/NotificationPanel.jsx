@@ -38,7 +38,7 @@ export default function NotificationPanel() {
       }`}
     >
       <div className="w-full h-full flex justify-center items-center">
-        <h3 className="text-snow">No new notification</h3>
+        <p className="text-snow">No new notification</p>
       </div>
     </div>
   );
