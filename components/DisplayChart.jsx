@@ -12,11 +12,19 @@ import {
 import { generateStockCandles } from "@/helpers/generateStockCandles";
 
 export default function DisplayChart({ stockDetails }) {
-  const stockData = generateStockCandles(90);
-  const data_1 = stockData.slice(0, 20);
-  const data_2 = stockData.slice(0, 40);
-  const data_3 = stockData.slice(0, 60);
-  const data_4 = stockData.slice(0, 90);
+  const newData = generateStockCandles(200).map((candle) => ({
+    date: candle.t,
+    close: candle.c,
+    open: candle.o,
+    high: candle.h,
+    low: candle.l,
+    volume: candle.v,
+  }));
+
+  const data_1 = newData.slice(1, 50);
+  const data_2 = newData.slice(1, 100);
+  const data_3 = newData.slice(1, 150);
+  const data_4 = newData.slice(1, 200);
 
   const filterButtonsValue = [
     {
@@ -38,7 +46,7 @@ export default function DisplayChart({ stockDetails }) {
   ];
 
   const { lightMode } = contextFunc();
-  const [data, setData] = useState(stockData);
+  const [data, setData] = useState(newData);
   const [filter, setFilter] = useState("1Y");
   const firstBtn = filterButtonsValue[0].label;
   let lastIndex = filterButtonsValue.length - 1;
@@ -52,10 +60,10 @@ export default function DisplayChart({ stockDetails }) {
   };
 
   const formatData = () => {
-    return data.map((item) => {
+    return data.map((item, index) => {
       return {
-        value: item.h[0].toFixed(2),
-        date: convertDataTimeToYear(item.l[0]),
+        value: item.open,
+        date: convertDataTimeToYear(item.date),
       };
     });
   };
@@ -78,7 +86,7 @@ export default function DisplayChart({ stockDetails }) {
       <div
         className={`flex flex-col md:flex-row space-y-4 md:gap-0 justify-between items-center p-4 border-b border-${
           lightMode ? "darkSnow" : "secondaryLight"
-        } py-2`}
+        }`}
       >
         <h2
           className={`font-bold text-${
@@ -173,8 +181,9 @@ export default function DisplayChart({ stockDetails }) {
           </button>
         </div>
       </div>
-      <div className="relative mt-8 md:mt-0 md:absolute bottom-0 right-0 left-0">
-        <ResponsiveContainer height={300}>
+
+      <div className="relative md:mt-0 md:absolute bottom-0 right-0 left-0">
+        <ResponsiveContainer height={400}>
           <AreaChart data={formatData()}>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
@@ -194,7 +203,7 @@ export default function DisplayChart({ stockDetails }) {
               fill={lightMode ? "#73d7e1" : "#7250ee"}
               className="chart-area"
             />
-            {/* <Tooltip /> */}
+            <Tooltip />
             <XAxis hide={true} dataKey={"date"} />
             <YAxis hide={true} domain={["dataMin", "dataMax"]} />
           </AreaChart>

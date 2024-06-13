@@ -8,6 +8,7 @@ import Spinner from "./Spinner";
 import MobileSideBar from "./MobileSideBar";
 import MobileSearch from "./MobileSearch";
 import MobileSearchNav from "./MobileSearchNav";
+import Overlay from "./Overlay";
 
 export default function Layout({ children }) {
   const { isLoading, lightMode } = contextFunc();
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
       {isLoading && <Spinner />}
       <Nav />
       <SearchResults />
+      <Overlay />
       <div className="w-[20%]">
         <SideBar />
         <MobileSideBar />

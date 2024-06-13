@@ -9,6 +9,7 @@ import {
   BsFillCheckCircleFill,
 } from "react-icons/bs";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function OnBoarding() {
   const router = useRouter();
@@ -125,6 +126,18 @@ export default function OnBoarding() {
               </Link>
             )}
           </div>
+        </div>
+      </div>
+
+      <div className="w-[50vw] h-screen bg-secondaryDark justify-center items-center hidden md:flex">
+        <div className="w-[90%] flex items-center justify-center rounded-xl overflow-hidden">
+          <Image
+            src={`${onBoardingContent[count].introPhoto}`}
+            width={500}
+            height={500}
+            alt="intro photo"
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
     </div>

@@ -5,6 +5,21 @@ export default function SearchResults() {
   const { bestMatches, setStockSymbol, searchInput, setSearchInput } =
     contextFunc();
 
+  const searchRef = useRef(null);
+
+  const onClose = () => setSearchInput("");
+
+  useEffect(() => {
+    const handleClickOutside = (ev) => {
+      const current = searchRef.current;
+      if (current && !current.contains(ev.target)) onClose();
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [searchInput, onClose]);
+
   useEffect(() => {
     const closeSearchBox = (ev) => {
       if (ev.key === "Escape") {
@@ -19,7 +34,8 @@ export default function SearchResults() {
 
   return (
     <div
-      className={`w-[300px] h-[300px] hidden md:block p-2 rounded-lg search-result text-snow fixed top-14 left-0 lg:left-44 xl:left-56 z-[100] overflow-y-auto ${
+      ref={searchRef}
+      className={`w-1/4 h-2/4 hidden md:block p-2 rounded-lg search-result text-snow fixed top-14 left-0 lg:left-44 xl:left-56 z-[100] overflow-y-auto ${
         searchInput.length ? "open-search-result" : "close-search-result"
       }`}
     >

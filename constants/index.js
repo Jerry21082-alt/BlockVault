@@ -1,4 +1,3 @@
-
 import { img1, img2, img3 } from "@/public/images";
 
 export const onBoardingContent = [
@@ -9,6 +8,7 @@ export const onBoardingContent = [
       "How the web application simpifies cryptocurrency management.",
       "Key features and advantages of using the web application",
     ],
+    introPhoto: "/images/Screenshot (48).png",
   },
   {
     title: "Getting Started",
@@ -17,6 +17,7 @@ export const onBoardingContent = [
       "Connect your cryptocurrency exchange accounts.",
       "Configure security settings and two-factor authentication.",
     ],
+    introPhoto: "/images/Screenshot (54).png",
   },
   {
     title: "Adding and Tracking Your Cryptocurrency Portfolio",
@@ -25,6 +26,7 @@ export const onBoardingContent = [
       "Automatically sync your portfolio to a connected Exchange accounts.",
       "Track multi-time prices and porfolio performance.",
     ],
+    introPhoto: "/images/Screenshot (56).png",
   },
   {
     title: "Porfolio Analysis and Insights",
@@ -33,6 +35,7 @@ export const onBoardingContent = [
       "View performance matrices, including gains/access and stock",
       "Overate comprehencive reports and evaluations.",
     ],
+    introPhoto: "/images/Screenshot (51).png",
   },
   {
     title: "Transaction Management",
@@ -41,6 +44,7 @@ export const onBoardingContent = [
       "Track buy/sell orders, deposits and withdrawals.",
       "Calculate gains, losses and low implications.",
     ],
+    introPhoto: "/images/Screenshot (52).png",
   },
   {
     title: "Advanced Features",
@@ -49,6 +53,7 @@ export const onBoardingContent = [
       "Explore price charts and market trends.",
       "Utilize advanced tools for technical analysis.",
     ],
+    introPhoto: "/images/Screenshot (49).png",
   },
   {
     title: "News and Market Data",
@@ -57,6 +62,7 @@ export const onBoardingContent = [
       "Monitor market data and global trends.",
       "Stay informed with commulative news trends.",
     ],
+    introPhoto: "/images/Screenshot (53).png",
   },
   {
     title: "Security and Privacy Measures",
@@ -65,6 +71,7 @@ export const onBoardingContent = [
       "Safeguard your account important information.",
       "Use the application for security cryptocurrency management.",
     ],
+    introPhoto: "/images/Screenshot (55).png",
   },
 ];
 

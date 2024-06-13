@@ -99,7 +99,7 @@ export default function Market() {
                   {data.percentChange24h}%
                 </span>
               </td>
-              <td className="md:block">
+              <td>
                 <span className={`text-dangerColor`}>14.6%</span>
               </td>
               <td>
