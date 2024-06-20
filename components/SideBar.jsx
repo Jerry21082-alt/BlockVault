@@ -21,7 +21,9 @@ export default function SideBar() {
 
   return (
     <div
-      className={`side-bar w-[60%] md:w-[20vw] h-screen z-50 overflow-y-auto fixed top-0 left-0 hidden md:block ${lightMode ? "bg-snow" : "bg-secondarySemiDark"}`}
+      className={`side-bar w-[60%] md:w-[20vw] h-screen z-50 overflow-y-auto fixed top-0 left-0 hidden md:block ${
+        lightMode ? "bg-snow" : "bg-secondarySemiDark"
+      }`}
     >
       <div
         className={`flex items-start flex-col px-4 space-y-10 mt-20 ${
@@ -30,7 +32,7 @@ export default function SideBar() {
       >
         <Link
           onClick={() => setToggleBar(false)}
-          href="/"
+          href="/market"
           className={pathname == "/market" ? activeLink : inactiveLink}
         >
           <AiFillHome color={lightMode ? "#463a6c" : "#8b86a1"} size={20} />
