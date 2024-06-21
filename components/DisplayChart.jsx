@@ -203,7 +203,7 @@ export default function DisplayChart({ stockDetails }) {
               fill={lightMode ? "#73d7e1" : "#7250ee"}
               className="chart-area"
             />
-            <Tooltip />
+            {/* <Tooltip /> */}
             <XAxis hide={true} dataKey={"date"} />
             <YAxis hide={true} domain={["dataMin", "dataMax"]} />
           </AreaChart>
