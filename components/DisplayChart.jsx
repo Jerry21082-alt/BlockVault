@@ -12,7 +12,7 @@ import {
 import { generateStockCandles } from "@/helpers/generateStockCandles";
 
 export default function DisplayChart({ stockDetails }) {
-  const newData = generateStockCandles(200).map((candle) => ({
+  const newData = generateStockCandles(50).map((candle) => ({
     date: candle.t,
     close: candle.c,
     open: candle.o,
