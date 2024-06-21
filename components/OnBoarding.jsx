@@ -129,12 +129,10 @@ export default function OnBoarding() {
         </div>
       </div>
 
-      <div className="w-[50vw] h-screen bg-secondaryDark justify-center items-center hidden md:flex">
-        <div className="w-[90%] flex items-center justify-center rounded-xl overflow-hidden">
-          <Image
+      <div className="w-[80vw] h-screen bg-secondaryDark justify-center items-center hidden md:flex">
+        <div className="w-full flex items-center justify-center rounded-xl overflow-hidden">
+          <img
             src={`${onBoardingContent[count].introPhoto}`}
-            width={500}
-            height={500}
             alt="intro photo"
             className="w-full h-full object-contain"
           />

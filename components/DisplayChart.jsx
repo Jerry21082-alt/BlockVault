@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { contextFunc } from "./useStateContext/StateContext";
 import {
   Area,
@@ -12,7 +12,7 @@ import {
 import { generateStockCandles } from "@/helpers/generateStockCandles";
 
 export default function DisplayChart({ stockDetails }) {
-  const newData = generateStockCandles(50).map((candle) => ({
+  const newData = generateStockCandles(200).map((candle) => ({
     date: candle.t,
     close: candle.c,
     open: candle.o,
@@ -24,7 +24,7 @@ export default function DisplayChart({ stockDetails }) {
   const data_1 = newData.slice(1, 50);
   const data_2 = newData.slice(1, 100);
   const data_3 = newData.slice(1, 150);
-  const data_4 = newData.slice(1, 200);
+  const data_4 = newData.slice(0, 200);
 
   const filterButtonsValue = [
     {
@@ -47,7 +47,7 @@ export default function DisplayChart({ stockDetails }) {
 
   const { lightMode } = contextFunc();
   const [data, setData] = useState(newData);
-  const [filter, setFilter] = useState("1D");
+  const [filter, setFilter] = useState("1Y");
   const firstBtn = filterButtonsValue[0].label;
   let lastIndex = filterButtonsValue.length - 1;
   const lastBtn = filterButtonsValue[lastIndex].label;
