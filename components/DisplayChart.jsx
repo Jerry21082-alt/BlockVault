@@ -47,7 +47,7 @@ export default function DisplayChart({ stockDetails }) {
 
   const { lightMode } = contextFunc();
   const [data, setData] = useState(newData);
-  const [filter, setFilter] = useState("1Y");
+  const [filter, setFilter] = useState("1D");
   const firstBtn = filterButtonsValue[0].label;
   let lastIndex = filterButtonsValue.length - 1;
   const lastBtn = filterButtonsValue[lastIndex].label;
