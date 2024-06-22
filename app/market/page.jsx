@@ -21,7 +21,11 @@ export default function Page() {
         <div className="flex-container w-full h-full items-center overflow-x-scroll md:overflow-x-hidden overflow-y-hidden mt-2 flex space-x-2 md:space-x-4">
           {exchangeCard.map((card, index) => (
             <AspectRatioContainer aspectRatio={3 / 3} className="w-full">
-              <div className="w-56 md:w-full h-full bg-secondarySemiDark rounded-md p-3 relative">
+              <div
+                className={`w-56 md:w-full h-full ${
+                  lightMode ? "bg-snow" : "bg-secondarySemiDark"
+                } rounded-md p-3 relative`}
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="w-5 h-5">
