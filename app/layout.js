@@ -2,10 +2,11 @@ import "./globals.css";
 import "../styles/typography.css";
 import StateContext from "@/components/useStateContext/StateContext";
 
-// export const metaData = {
-//   title: "Cryoto-app",
-//   description: "best crypto app",
-// };
+export const metadata = {
+  title: "Block Vault",
+  description:
+    "This project showcases a comprehensive CryptoWeb Application designed to enhance user experience by providing real-time cryptocurrency data visualization. It features interactive candlestick charts and seamless data fetching from an external API, offering users a dynamic and informative platform for tracking cryptocurrency trends.",
+};
 
 export default function layout({ children }) {
   return (
